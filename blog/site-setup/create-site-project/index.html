@@ -1,0 +1,2607 @@
+
+
+
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Personal site is a good place to keep notes of leanrt things, to share knowledge with readers, or to briefly introduce yourself. Creating your own site is quite easy, as you can choose to use a ready-to-go platform. This article is the way I used to bring up my site, so let's check it out.">
+      
+      
+        <meta name="author" content="Abhishek Bhardwaj (abhishekbhardwaj090@gmail.com)">
+      
+      
+        <link rel="canonical" href="https://www.github.com/bhardwajAbhi/blog/site-setup/create-site-project/">
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+        <link rel="next" href="../mkdocs-plugins/">
+      
+      <link rel="icon" href="../../../favicon.png">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+    
+    
+    <title>A Guide to Create a Personal Site - Abhishek Bhardwaj</title>
+
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Serif";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/view-bigimg.css">
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="A Guide to Create a Personal Site - Abhishek Bhardwaj" />
+    <meta property="og:description" content="Personal site is a good place to keep notes of leanrt things, to share knowledge with readers, or to briefly introduce yourself. Creating your own site is quite easy, as you can choose to use a ready-to-go platform. This article is the way I used to bring up my site, so let's check it out. - Tutorials, Blogs, Guides on Android." />
+    <meta property="og:url" content="https://www.github.com/bhardwajAbhi/blog/site-setup/create-site-project/" />
+    <meta property="og:image" content="https://www.github.com/bhardwajAbhi/blog/site-setup/create-site-project/writting.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="A Guide to Create a Personal Site - Abhishek Bhardwaj" />
+    <meta name="twitter:description" content="Personal site is a good place to keep notes of leanrt things, to share knowledge with readers, or to briefly introduce yourself. Creating your own site is quite easy, as you can choose to use a ready-to-go platform. This article is the way I used to bring up my site, so let's check it out. - Tutorials, Blogs, Guides on Android." />
+    <meta name="twitter:image" content="https://www.github.com/bhardwajAbhi/blog/site-setup/create-site-project/writting.png" />
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="deep-orange">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#material-for-mkdocs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="">
+    <a href="../../.." title="Abhishek Bhardwaj" class="md-header__button md-logo" aria-label="Abhishek Bhardwaj" data-md-component="logo">
+      
+  <img src="../../../assets/logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Abhishek Bhardwaj
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A Guide to Create a Personal Site
+            
+          </span>
+        </div>
+        
+            <style>
+                .md-header__nav {
+                    float: right;
+                }
+                .md-header__nav__inner:not([hidden]) {
+                    display: flex;
+                }
+            </style>
+            <div class="md-header__nav">
+                <nav class="md-header__nav__inner">
+                    
+                        
+                        <a href="../../" aria-label="Previous: Recent posts" rel="prev">
+                            <div class="md-footer__button md-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                            </div>
+                        </a>
+                    
+                    
+                        
+                        <a href="../mkdocs-plugins/" aria-label="Next: Additional Features using MkDocs Plugins" rel="next">
+                            <div class="md-footer__button md-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+                            </div>
+                        </a>
+                    
+                </nav>
+            </div>
+        
+    </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Blog
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../projects/android/" class="md-tabs__link">
+        Projects
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tags/" class="md-tabs__link">
+        Tags
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+    
+    
+
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Abhishek Bhardwaj" class="md-nav__button md-logo" aria-label="Abhishek Bhardwaj" data-md-component="logo">
+      
+  <img src="../../../assets/logo.jpg" alt="logo">
+
+    </a>
+    Abhishek Bhardwaj
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Blog</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Recent posts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Site setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Site setup" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Site setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1" type="checkbox" id="__nav_2_2_1" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Create site project</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Create site project" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Create site project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc" checked
+        onchange='(function(){
+          var _pid = "__nav_2_2_1_1".slice(0, -2);
+          var _pel = document.getElementById(_pid);
+          _pel.checked  = false;
+        })()'
+      >
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          A Guide to Create a Personal Site
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        A Guide to Create a Personal Site
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#material-for-mkdocs" class="md-nav__link">
+    Material for MkDocs
+  </a>
+  
+    <nav class="md-nav" aria-label="Material for MkDocs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-folder" class="md-nav__link">
+    Working folder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-studio-code" class="md-nav__link">
+    Visual Studio Code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-configuration" class="md-nav__link">
+    Basic Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#site-information" class="md-nav__link">
+    Site Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appearance" class="md-nav__link">
+    Appearance
+  </a>
+  
+    <nav class="md-nav" aria-label="Appearance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colors" class="md-nav__link">
+    Colors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fonts" class="md-nav__link">
+    Fonts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icons" class="md-nav__link">
+    Icons
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    Navigation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content" class="md-nav__link">
+    Content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site-analytics" class="md-nav__link">
+    Site analytics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customization" class="md-nav__link">
+    Customization
+  </a>
+  
+    <nav class="md-nav" aria-label="Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extra-assets" class="md-nav__link">
+    Extra assets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extend-the-theme" class="md-nav__link">
+    Extend the theme
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-system" class="md-nav__link">
+    Comment system
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../mkdocs-plugins/">Mkdocs plugins</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Mkdocs plugins" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Mkdocs plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs-plugins/" class="md-nav__link">
+        Additional Features using MkDocs Plugins
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_3" type="checkbox" id="__nav_2_2_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../markdown-syntax/">Markdown syntax</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Markdown syntax" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Markdown syntax
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../markdown-syntax/" class="md-nav__link">
+        Syntaxes for Writing Markdown Documents
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_4" type="checkbox" id="__nav_2_2_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../handle-missing-page/">Handle missing page</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Handle missing page" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Handle missing page
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../handle-missing-page/" class="md-nav__link">
+        Hanlde Page Not Found (404) error
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_5" type="checkbox" id="__nav_2_2_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../add-new-features/">Add new features</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Add new features" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Add new features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-new-features/" class="md-nav__link">
+        Add Tags, Recent Post and new Features to my Blog site
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_6" type="checkbox" id="__nav_2_2_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../print-to-pdf/">Print to PDF</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Print to PDF" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Print to PDF
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../print-to-pdf/" class="md-nav__link">
+        Print Pages to PDF files
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Projects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Projects" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../projects/android/">Android</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Android" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/android/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../projects/java/">Java</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Java" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/java/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../projects/machine-learning/">Machine learning</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Machine learning" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Machine learning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/machine-learning/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../projects/python/">Python Scripts</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Python Scripts" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Python Scripts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/python/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tags/">Tags</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Tags" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tags
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+
+                
+                
+                    <br>
+                    <br>
+                    <div class="tag-cloud-nav">
+                        
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+    
+      
+        
+      
+    
+      
+        
+        
+        
+        
+          
+          
+        
+        
+        
+          
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+        
+        
+          
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+          
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+            
+            
+          
+        
+          
+          
+        
+        
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+        
+        
+          
+        
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<style>
+    .tag-cloud {
+        margin-top:0;
+        margin-bottom: 0.5em;
+    }
+    .tag-cloud-content {
+        padding: 0 0.6rem;
+        
+    }
+</style>
+
+<p class="md-nav tag-cloud">
+  <label class="md-nav__title">Tag cloud</label>
+</p>
+<div class="tag-cloud-content">
+    
+        
+            
+            
+            
+            <a class="tag" href="https://www.github.com/bhardwajAbhi/tags/#jinja">
+                <span class="tag-name" style="
+                    
+                        
+                    
+                        font-size:0.55rem;
+                    
+                    color:DarkGoldenrod;
+                ">jinja&nbsp;
+                </span>
+                <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://www.github.com/bhardwajAbhi/tags/#javascript">
+                <span class="tag-name" style="
+                    
+                        
+                    
+                        font-size:0.6rem;
+                    
+                    color:DarkGreen;
+                ">javascript&nbsp;
+                </span>
+                <!--<sup class="tag-count">2</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://www.github.com/bhardwajAbhi/tags/#mkdocs">
+                <span class="tag-name" style="
+                    
+                        
+                    
+                        font-size:0.6rem;
+                    
+                    color:DarkOliveGreen;
+                ">mkdocs&nbsp;
+                </span>
+                <!--<sup class="tag-count">2</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://www.github.com/bhardwajAbhi/tags/#markdown">
+                <span class="tag-name" style="
+                    
+                        
+                    
+                        font-size:0.55rem;
+                    
+                    color:DarkCyan;
+                ">markdown&nbsp;
+                </span>
+                <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://www.github.com/bhardwajAbhi/tags/#python">
+                <span class="tag-name" style="
+                    
+                        
+                    
+                        font-size:0.55rem;
+                    
+                    color:DarkTurquoise;
+                ">python&nbsp;
+                </span>
+                <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+    
+</div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#material-for-mkdocs" class="md-nav__link">
+    Material for MkDocs
+  </a>
+  
+    <nav class="md-nav" aria-label="Material for MkDocs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-folder" class="md-nav__link">
+    Working folder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-studio-code" class="md-nav__link">
+    Visual Studio Code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-configuration" class="md-nav__link">
+    Basic Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#site-information" class="md-nav__link">
+    Site Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appearance" class="md-nav__link">
+    Appearance
+  </a>
+  
+    <nav class="md-nav" aria-label="Appearance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colors" class="md-nav__link">
+    Colors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fonts" class="md-nav__link">
+    Fonts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icons" class="md-nav__link">
+    Icons
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    Navigation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content" class="md-nav__link">
+    Content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site-analytics" class="md-nav__link">
+    Site analytics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customization" class="md-nav__link">
+    Customization
+  </a>
+  
+    <nav class="md-nav" aria-label="Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extra-assets" class="md-nav__link">
+    Extra assets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extend-the-theme" class="md-nav__link">
+    Extend the theme
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-system" class="md-nav__link">
+    Comment system
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+    
+
+
+
+<style>
+    .md-typeset .cover {
+        margin-bottom: 1em;
+    }
+    .md-typeset .page-category {
+        color: gray;
+        font-size: large;
+    }
+    .md-typeset .page-title {
+        margin-left: -0.0625em;
+    }
+    .md-typeset .page-extra {
+        color: gray;
+        font-size: small;
+    }
+    .md-typeset .page-tags {
+        margin: 0;
+    }
+    .md-typeset .page-date {
+        margin: 0;
+        text-align: end;
+    }
+    @media print {
+        .md-typeset .cover {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .md-typeset .cover + * {
+            margin-top: 0;
+        }
+    }
+</style>
+
+<div class="cover">
+    
+    
+
+    
+    <h1 class="page-title"> A Guide to Create a Personal Site </h1>
+
+    
+    
+        <p class="page-description">
+            Personal site is a good place to keep notes of leanrt things, to share knowledge with readers, or to briefly introduce yourself. Creating your own site is quite easy, as you can choose to use a ready-to-go platform. This article is the way I used to bring up my site, so let's check it out.
+        </p>
+    
+
+    
+        <div class="page-extra row">
+            <div class="col">
+            
+                <p class="page-tags">
+                    
+                        <a class="tag" href="https://www.github.com/bhardwajAbhi/tags/#mkdocs">
+                            <span class="tag-name">
+                                #mkdocs &nbsp;
+                            </span>
+                        </a>
+                    
+                </p>
+            
+            
+            </div>
+            <div class="col">
+                <p class="page-date">
+                    <span>
+                    
+                        Last update:
+                        2023-10-06
+                    
+                    </span>
+                </p>
+            </div>
+        </div>
+    
+</div>
+
+<hr class="screen-only">
+
+
+<style>
+    .md-typeset .toc {
+        display: none;
+    }
+    .md-typeset .toc label {
+        display: none;
+    }
+    .md-typeset .toc .md-nav {
+        font-size: unset;
+        line-height: 1.6;
+    }
+    .md-typeset .toc .md-nav--secondary {
+        margin-left: -2em;
+    }
+    .md-typeset .toc .md-nav__list {
+        margin: 0;
+    }
+    .md-typeset .toc ul {
+        list-style: none;
+    }
+    @media print {
+        .md-typeset .toc {
+            display: block;
+            page-break-after: always;
+        }
+        .md-typeset .toc .md-nav__link {
+            color: var(--md-typeset-a-color);
+        }
+        .md-typeset .toc .md-nav__link.md-nav__link--active {
+            font-weight: unset;
+        }
+        .md-typeset .toc + * {
+            margin-top: 0;
+        }
+    }
+</style>
+
+<div class="toc">
+    <h2>Table of Content</h2>
+    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#material-for-mkdocs" class="md-nav__link">
+    Material for MkDocs
+  </a>
+  
+    <nav class="md-nav" aria-label="Material for MkDocs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-folder" class="md-nav__link">
+    Working folder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visual-studio-code" class="md-nav__link">
+    Visual Studio Code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-configuration" class="md-nav__link">
+    Basic Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#site-information" class="md-nav__link">
+    Site Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appearance" class="md-nav__link">
+    Appearance
+  </a>
+  
+    <nav class="md-nav" aria-label="Appearance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colors" class="md-nav__link">
+    Colors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fonts" class="md-nav__link">
+    Fonts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icons" class="md-nav__link">
+    Icons
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    Navigation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content" class="md-nav__link">
+    Content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site-analytics" class="md-nav__link">
+    Site analytics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customization" class="md-nav__link">
+    Customization
+  </a>
+  
+    <nav class="md-nav" aria-label="Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extra-assets" class="md-nav__link">
+    Extra assets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extend-the-theme" class="md-nav__link">
+    Extend the theme
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-system" class="md-nav__link">
+    Comment system
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+</div>
+
+
+
+    
+    <h2 id="material-for-mkdocs">Material for MkDocs<a class="headerlink" href="#material-for-mkdocs" title="Permanent link">#</a></h2>
+<p>A personal site is usually a static site which has pre-built contents. A static site generator is a tool that generates a full static HTML website based on raw data and a set of templates. Visit <a href="https://jamstack.org/generators/">the list of Site Generators</a> to see available tools.</p>
+<p><a href="https://www.mkdocs.org/">MkDocs</a> is a fast and simple engine to build a site for project documentation. Content source files are written in <a href="https://daringfireball.net/projects/markdown/">Markdown</a> format, and the site is configured with a single <a href="https://yaml.org/">YAML</a> config file.</p>
+<p><a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a> is a popular theme for MkDocs. It has a simple and clear layout with a bunch of useful features, such as better navigation behaviors, strongly integrated Markdown extensions, and some additional tweaks. This project has a paid version called <a href="https://squidfunk.github.io/mkdocs-material/insiders/">Insiders</a>, but the free version is perfectly enough for a personal use.</p>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h3>
+<p style="margin-bottom:-0.5em;">Steps to install and create a new site:</p>
+<ol>
+<li>
+<p>Download and install <a href="https://www.python.org">Python 3</a>.</p>
+</li>
+<li>
+<p>Create a new folder to store the project:</p>
+<div class="highlight"><pre><span></span><code>mkdir CodeInsideOut
+cd CodeInsideOut
+</code></pre></div>
+<p>It&rsquo;s recommended to use a <a href="https://docs.python.org/3/library/venv.html">virtual environment</a> to isolate this project with others from a possible package conflict.</p>
+<div class="highlight"><pre><span></span><code>python -m venv .venv
+</code></pre></div>
+<p>Then activate the virtual environment:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>.venv/Scripts/activate.bat
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>.venv/Scripts/activate
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Remember to run this command every time you come back to work in this project.</p>
+</li>
+<li>
+<p>Install <em>Material for MkDocs</em> package. Read more at <a href="https://squidfunk.github.io/mkdocs-material/getting-started/">getting started</a>:</p>
+<div class="highlight"><pre><span></span><code>pip install mkdocs-material
+</code></pre></div>
+</li>
+<li>
+<p>Start a new site:</p>
+<div class="highlight"><pre><span></span><code>mkdocs new .
+</code></pre></div>
+<p>This will create the following file structure:</p>
+<div class="highlight"><pre><span></span><code>.
+├─<span class="w"> </span>mkdocs.yml<span class="w">    </span><span class="c1"># The configuration file</span>
+└─<span class="w"> </span>docs/<span class="w">         </span><span class="c1"># Other markdown pages</span>
+<span class="w">    </span>├─<span class="w"> </span>index.md<span class="w">  </span><span class="c1"># The documentation homepage</span>
+<span class="w">    </span>└─<span class="w"> </span>...<span class="w">       </span><span class="c1"># Other files</span>
+</code></pre></div>
+</li>
+<li>
+<p>Enable <em>Material for MkDocs</em> theme by adding a config into <code>mkdocs.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+</code></pre></div>
+</li>
+<li>
+<p>Run a local server, and preview the site at <a href="http://localhost:8000">http://localhost:8000</a> to see the default homepage:</p>
+<div class="highlight"><pre><span></span><code>mkdocs serve
+</code></pre></div>
+</li>
+<li>
+<p>To publish the site, build it first:</p>
+<div class="highlight"><pre><span></span><code>mkdocs build
+</code></pre></div>
+<p>Then copy all the content in the <code>site</code> folder to the website&rsquo;s root folder.</p>
+</li>
+</ol>
+<h3 id="working-folder">Working folder<a class="headerlink" href="#working-folder" title="Permanent link">#</a></h3>
+<p>Each Markdown file inside the folder <code>docs</code> will be rendered as a page of the site. The index page is located at <code>docs/index.md</code>. Sub-folders are used as the path to a group of related posts.</p>
+<p>If a post is named other than <code>index.md</code>, the filename will be used as the directory path of the generated page. Here is how MkDocs generates URLs for Markdown posts:</p>
+<ul>
+<li>
+<p>folder <code>docs</code> becomes the root of the site <a href="#">www.site.com/</a></p>
+</li>
+<li>
+<p>file <code>docs/blog/post.md</code> becomes the link <a href="#">www.site.com/blog/post/</a></p>
+</li>
+<li>
+<p>file <code>docs/blog/post/index.md</code> also becomes the link <a href="#">www.site.com/blog/post/</a></p>
+</li>
+</ul>
+<blockquote>
+<p>Use hyphen (<code>-</code>) in folder name and file name to create good URLs. Some tips <a href="https://developers.google.com/search/docs/advanced/guidelines/url-structure">here</a>.</p>
+</blockquote>
+<h2 id="visual-studio-code">Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permanent link">#</a></h2>
+<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> is a lightweight but powerful source code editor. It well supports users to write code, documents, notes. This editor also have some extensions to turn it into a full-feature IDE.</p>
+<p>Useful extensions for writing in Markdown format and editing HTML template:</p>
+<ul>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">Markdown All in One</a>: add keyboard shortcuts, auto-completion, edit and format list and table.</p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image">Markdown Paste</a>: paste images, links from the clipboard.</p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">Prettier — Code formatter</a>: a formatter which supports a lot of languages.</p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio">Draw.io Integration</a>: edit diagrams and SVG images.</p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex">LTeX</a>: Grammar/spell checker using LanguageTool with support for LaTeX, Markdown, and others.</p>
+</li>
+</ul>
+<p>Additional extensions:</p>
+<ul>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=wholroyd.jinja">Jinja</a>: highlight Jinja syntax in HTML templates.</p>
+</li>
+<li>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings">Sublime Text Key map and Settings Importer</a>: import keybindings and settings.</p>
+</li>
+</ul>
+<p>
+<figure><img src="writting.png" /><figcaption>Writing a post using Visual Studio Code</figcaption>
+</figure>
+</p>
+<h2 id="basic-configuration">Basic Configuration<a class="headerlink" href="#basic-configuration" title="Permanent link">#</a></h2>
+<p>All configurations are declared in the config file <code>mkdocs.yml</code> at the root of the project folder. Here are some main settings to quickly customize your site:</p>
+<h3 id="site-information">Site Information<a class="headerlink" href="#site-information" title="Permanent link">#</a></h3>
+<p>Site information consists of the name, the URL, the title, a description and some keywords that are used to get brief information about the content of the site. <em>The copyright word should include a link to the original theme when you use the free version.</em></p>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Code Inside Out</span>
+<span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.codeinsideout.com/</span><span class="w"> </span><span class="c1"># must have the trailing slash</span>
+<span class="nt">site_author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Vũ Quang Trọng (vuquangtrong@gmail.com)</span>
+<span class="nt">site_description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Guides, notes and useful stuff for learning embedded systems.</span>
+<span class="nt">copyright</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span><span class="w"> </span><span class="c1"># should remain a link to the original theme</span>
+<span class="w">  </span><span class="no">&amp;copy; 2021 Code Inside Out&lt;br&gt;</span>
+<span class="w">  </span><span class="no">&lt;a href=&quot;https://github.com/vuquangtrong/mkdocs-material-blog&quot;&gt;Blog Theme&lt;/a&gt; /</span>
+<span class="w">  </span><span class="no">&lt;a href=&quot;https://squidfunk.github.io/mkdocs-material/&quot;&gt;Material for MkDocs&lt;/a&gt;</span>
+</code></pre></div>
+<p>The social links in the <a href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer">footer</a> can be added in the <code>extra</code> section.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">extra</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">social</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fontawesome/brands/github-alt</span>
+<span class="w">      </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/vuquangtrong</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vuquangtrong</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fontawesome/brands/facebook-f</span>
+<span class="w">      </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://facebook.com/trongvq</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trongvq</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fontawesome/brands/linkedin-in</span>
+<span class="w">      </span><span class="nt">link</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.linkedin.com/in/vqtrong</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vqtrong</span>
+<span class="w">  </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># hide the line &quot;Made with Material for MkDocs&quot;</span>
+</code></pre></div>
+<h3 id="appearance">Appearance<a class="headerlink" href="#appearance" title="Permanent link">#</a></h3>
+<p>The theme can be customized by changing below options:</p>
+<h4 id="colors">Colors<a class="headerlink" href="#colors" title="Permanent link">#</a></h4>
+<p><a href="https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/">Changing color</a> is to select colors for 2 main groups:</p>
+<ul>
+<li>The <em>primary</em> color which is used for the header, the sidebar, text links and several other components.</li>
+<li>The <em>accent</em> color which is used to denote elements that can be interacted with, e.g. hovered links, buttons and scroll-bars.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">palette</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">white</span>
+<span class="w">    </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deep orange</span>
+</code></pre></div>
+<h4 id="fonts">Fonts<a class="headerlink" href="#fonts" title="Permanent link">#</a></h4>
+<p>Serif fonts<sup id="fnref:serif"><a class="footnote-ref" href="#fn:serif">1</a></sup> are widely used for body text because they are considered to be easier to read than Sans-Serif fonts in print.</p>
+<p>For better reading, distinguishing the digit zero <code>0</code> from the Latin script letter Oh <code>o</code> or <code>O</code> is a way to avoid mistake, especially while reading technical notes. Fonts for source code do have slashed/ dotted/ open zero<sup id="fnref:zero"><a class="footnote-ref" href="#fn:zero">2</a></sup>, but fonts for reading don&rsquo;t have those styles.</p>
+<p>It&rsquo;s also needed to clearly distinguish the digit one <code>1</code> with lowercase <code>i</code>, the uppercase <code>I</code>, and the lowercase <code>l</code>. Luckily, they usually do not stand close to each other.</p>
+<p>To replace the <a href="https://squidfunk.github.io/mkdocs-material/setup/changing-the-fonts/">defaults fonts</a>, this site uses <em>Noto Serif</em> for the body text, and <em>Roboto Mono</em> for the code block.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">font</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Noto Serif</span>
+<span class="w">    </span><span class="nt">code</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Roboto Mono</span>
+</code></pre></div>
+<p>Can you easily read below pairs of characters?</p>
+<ul>
+<li>Body text: 0o 0O oO 1i 1I 1l 1L iI il iL Il IL lL</li>
+<li>Code block: <code>0o 0O oO 1i 1I 1l 1L iI il iL Il IL lL</code></li>
+</ul>
+<h4 id="icons">Icons<a class="headerlink" href="#icons" title="Permanent link">#</a></h4>
+<p><a href="https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/#logo">Icons</a> can be selected in built-in icon packs, such as <span class="twemoji" style="color:orangered"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span>. It can be an image also.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">icon</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">logo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fontawesome/solid/code</span>
+<span class="w">  </span><span class="nt">favicon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">favicon.png</span>
+</code></pre></div>
+<h3 id="navigation">Navigation<a class="headerlink" href="#navigation" title="Permanent link">#</a></h3>
+<p>A clear and concise navigation structure is an important aspect of good site. The layout will be 3 columns: Site Navigation, Main Content, Table of Content. Some <a href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/">navigation features</a> are applied as below:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># - navigation.instant # some features may not work properly with XHR</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tracking</span><span class="w"> </span><span class="c1"># the URL changes with the active anchor</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tabs</span><span class="w"> </span><span class="c1"># first top-level sections are shown as tabs</span>
+<span class="w">    </span><span class="c1"># - navigation.tabs.sticky # tabs always show</span>
+<span class="w">    </span><span class="c1"># - navigation.sections # sections are rendered as groups in the sidebar</span>
+<span class="w">    </span><span class="c1"># - navigation.expand # all sections are expanded</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.indexes</span><span class="w"> </span><span class="c1"># link an index.md page to a section</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.top</span><span class="w"> </span><span class="c1"># show back-to-top button</span>
+<span class="w">    </span><span class="c1"># - toc.integrate # show table of contents to navigation panel</span>
+<span class="w">    </span><span class="c1"># - header.autohide</span>
+</code></pre></div>
+<h3 id="search">Search<a class="headerlink" href="#search" title="Permanent link">#</a></h3>
+<p>The MkDocs-based sites come with a built-in <a href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search">search engine</a>, which also provides some additional features as below:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search.suggest</span><span class="w"> </span><span class="c1"># display the likeliest completion for the last word</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search.highlight</span><span class="w"> </span><span class="c1"># highlight all occurrences</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search.share</span><span class="w"> </span><span class="c1"># show a share button</span>
+</code></pre></div>
+<h3 id="content">Content<a class="headerlink" href="#content" title="Permanent link">#</a></h3>
+<p>Some extra features are enabled to render interactive elements. </p>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content.code.annotate</span>
+</code></pre></div>
+<p>When <a href="../markdown-syntax/#metadata">Metadata</a> is enabled, the navigation and/or table of contents sidebars can be hidden for a document with custom front matter.</p>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">hide</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">toc</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">feedback</span>
+<span class="nn">---</span>
+</code></pre></div>
+<h3 id="site-analytics">Site analytics<a class="headerlink" href="#site-analytics" title="Permanent link">#</a></h3>
+<p>Material for MkDocs integrates with both, Google Analytics 4 and the now phasing out Universal Analytics.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">extra</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">analytics</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">google</span>
+<span class="w">    </span><span class="nt">property</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">G-XXXXXXXXXX or UA-XXXXXXXX-X</span>
+</code></pre></div>
+<h3 id="customization">Customization<a class="headerlink" href="#customization" title="Permanent link">#</a></h3>
+<p>Below are ways to customize the theme in terms of adding some extra lines of code. However, this method is quite easy even for beginners who have known some of CSS and JS.</p>
+<h4 id="extra-assets">Extra assets<a class="headerlink" href="#extra-assets" title="Permanent link">#</a></h4>
+<p><a href="https://squidfunk.github.io/mkdocs-material/customization/#adding-assets">Additional assets</a> can be used to add user&rsquo;s stylesheets and JavaScript files. Those file should be added to the <code>docs</code> directory as below structure:</p>
+<div class="highlight"><pre><span></span><code>.
+├─ docs/
+│ ├─ assets/
+<span class="hll">│ | └─ extra.css
+</span><span class="hll">│ | └─ extra.js
+</span>| └─ blog/
+└─ mkdocs.yml
+</code></pre></div>
+<p>Then, add the following line to <code>mkdocs.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">extra_css</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/extra.css</span>
+<span class="nt">extra_javascript</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/extra.js</span>
+</code></pre></div>
+<p>Use the <strong>Developer mode</strong> in your browser to inspect elements and changes their styles as your taste in <code>extra.css</code>. Add extra scripts to <code>extra.js</code> to interact with elements also.</p>
+<h4 id="extend-the-theme">Extend the theme<a class="headerlink" href="#extend-the-theme" title="Permanent link">#</a></h4>
+<p><a href="https://squidfunk.github.io/mkdocs-material/customization/#extending-the-theme">Extending the theme</a> is a way to alter the HTML structure and layout. Create a new folder name <code>overrides</code> beside the <code>docs</code> folder and add below config into <code>mkdocs.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+<span class="w">  </span><span class="nt">custom_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">overrides</span>
+</code></pre></div>
+<p>The structure in the <code>overrides</code> directory must mirror the directory structure of the original theme, as any file in the <code>overrides</code> directory will replace the file with the same name which is part of the original theme. Besides, further assets may also be put in the <code>overrides</code> directory:</p>
+<div class="highlight"><pre><span></span><code>.
+├─<span class="w"> </span>.icons/<span class="w">                             </span><span class="c1"># Bundled icon sets</span>
+├─<span class="w"> </span>assets/
+│<span class="w">  </span>├─<span class="w"> </span>images/<span class="w">                          </span><span class="c1"># Images and icons</span>
+│<span class="w">  </span>├─<span class="w"> </span>javascripts/<span class="w">                     </span><span class="c1"># JavaScript files</span>
+│<span class="w">  </span>└─<span class="w"> </span>stylesheets/<span class="w">                     </span><span class="c1"># Style sheets</span>
+├─<span class="w"> </span>partials/
+│<span class="w">  </span>├─<span class="w"> </span>integrations/<span class="w">                    </span><span class="c1"># Third-party integrations</span>
+│<span class="w">  </span>│<span class="w">  </span>├─<span class="w"> </span>analytics/<span class="w">                    </span><span class="c1"># Analytics integrations</span>
+│<span class="w">  </span>│<span class="w">  </span>└─<span class="w"> </span>analytics.html<span class="w">                </span><span class="c1"># Analytics setup</span>
+│<span class="w">  </span>├─<span class="w"> </span>languages/<span class="w">                       </span><span class="c1"># Translation languages</span>
+│<span class="w">  </span>├─<span class="w"> </span>content.html<span class="w">                     </span><span class="c1"># Page content</span>
+│<span class="w">  </span>├─<span class="w"> </span>copyright.html<span class="w">                   </span><span class="c1"># Copyright and theme information</span>
+│<span class="w">  </span>├─<span class="w"> </span>footer.html<span class="w">                      </span><span class="c1"># Footer bar</span>
+│<span class="w">  </span>├─<span class="w"> </span>header.html<span class="w">                      </span><span class="c1"># Header bar</span>
+│<span class="w">  </span>├─<span class="w"> </span>language.html<span class="w">                    </span><span class="c1"># Translation setup</span>
+│<span class="w">  </span>├─<span class="w"> </span>logo.html<span class="w">                        </span><span class="c1"># Logo in header and sidebar</span>
+│<span class="w">  </span>├─<span class="w"> </span>nav.html<span class="w">                         </span><span class="c1"># Main navigation</span>
+│<span class="w">  </span>├─<span class="w"> </span>nav-item.html<span class="w">                    </span><span class="c1"># Main navigation item</span>
+│<span class="w">  </span>├─<span class="w"> </span>palette.html<span class="w">                     </span><span class="c1"># Color palette</span>
+│<span class="w">  </span>├─<span class="w"> </span>search.html<span class="w">                      </span><span class="c1"># Search interface</span>
+│<span class="w">  </span>├─<span class="w"> </span>social.html<span class="w">                      </span><span class="c1"># Social links</span>
+│<span class="w">  </span>├─<span class="w"> </span>source.html<span class="w">                      </span><span class="c1"># Repository information</span>
+│<span class="w">  </span>├─<span class="w"> </span>source-file.html<span class="w">                 </span><span class="c1"># Source file information</span>
+│<span class="w">  </span>├─<span class="w"> </span>tabs.html<span class="w">                        </span><span class="c1"># Tabs navigation</span>
+│<span class="w">  </span>├─<span class="w"> </span>tabs-item.html<span class="w">                   </span><span class="c1"># Tabs navigation item</span>
+│<span class="w">  </span>├─<span class="w"> </span>toc.html<span class="w">                         </span><span class="c1"># Table of contents</span>
+│<span class="w">  </span>└─<span class="w"> </span>toc-item.html<span class="w">                    </span><span class="c1"># Table of contents item</span>
+├─<span class="w"> </span><span class="m">404</span>.html<span class="w">                            </span><span class="c1"># 404 error page</span>
+├─<span class="w"> </span>base.html<span class="w">                           </span><span class="c1"># Base template</span>
+└─<span class="w"> </span>main.html<span class="w">                           </span><span class="c1"># Default page</span>
+</code></pre></div>
+<p><strong>Overriding partials</strong></p>
+<p>In order to override a partial, we can replace it with a file of the same name and location in the <code>overrides</code> directory. For example, to replace the original <code>footer.html</code> partial, create a new <code>footer.html</code> partial in the <code>overrides</code> directory:</p>
+<div class="highlight"><pre><span></span><code>.
+├─<span class="w"> </span>overrides/
+│<span class="w">  </span>└─<span class="w"> </span>partials/
+│<span class="w">     </span>└─<span class="w"> </span>footer.html
+└─<span class="w"> </span>mkdocs.yml
+</code></pre></div>
+<p>MkDocs will now use the new partial when rendering the theme. This can be done with any file.</p>
+<p>/
+<strong>Overriding blocks</strong> <em>(recommended)</em></p>
+<p>Besides overriding partials, it&rsquo;s also possible to override (and extend) template blocks, which are defined inside the templates and wrap specific features. In order to set up block overrides, create a <code>main.html</code> file inside the <code>overrides</code> directory:</p>
+<div class="highlight"><pre><span></span><code>.
+├─<span class="w"> </span>overrides/
+│<span class="w">  </span>└─<span class="w"> </span>main.html
+└─<span class="w"> </span>mkdocs.yml
+</code></pre></div>
+<p>Then, e.g. to override the site title, add the following lines to main.html:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;base.html&quot;</span> <span class="cp">%}</span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">htmltitle</span> <span class="cp">%}</span>
+<span class="x">    &lt;title&gt;Lorem ipsum dolor sit amet&lt;/title&gt;</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
+</code></pre></div>
+<p>The following template blocks are provided by the theme:</p>
+<div class="highlight"><pre><span></span><code>analytics<span class="w">   </span><span class="c1"># Wraps the Google Analytics integration</span>
+announce<span class="w">    </span><span class="c1"># Wraps the announcement bar</span>
+config<span class="w">      </span><span class="c1"># Wraps the JavaScript application config</span>
+content<span class="w">     </span><span class="c1"># Wraps the main content</span>
+disqus<span class="w">      </span><span class="c1"># Wraps the Disqus integration</span>
+extrahead<span class="w">   </span><span class="c1"># Empty block to add custom meta tags</span>
+fonts<span class="w">       </span><span class="c1"># Wraps the font definitions</span>
+footer<span class="w">      </span><span class="c1"># Wraps the footer with navigation and copyright</span>
+header<span class="w">      </span><span class="c1"># Wraps the fixed header bar</span>
+hero<span class="w">        </span><span class="c1"># Wraps the hero teaser (if available)</span>
+htmltitle<span class="w">   </span><span class="c1"># Wraps the &lt;title&gt; tag</span>
+libs<span class="w">        </span><span class="c1"># Wraps the JavaScript libraries (header)</span>
+outdated<span class="w">    </span><span class="c1"># Wraps the version warning</span>
+scripts<span class="w">     </span><span class="c1"># Wraps the JavaScript application (footer)</span>
+site_meta<span class="w">   </span><span class="c1"># Wraps the meta tags in the document head</span>
+site_nav<span class="w">    </span><span class="c1"># Wraps the site navigation and table of contents</span>
+styles<span class="w">      </span><span class="c1"># Wraps the style sheets (also extra sources)</span>
+tabs<span class="w">        </span><span class="c1"># Wraps the tabs navigation (if available)</span>
+</code></pre></div>
+<h3 id="comment-system">Comment system<a class="headerlink" href="#comment-system" title="Permanent link">#</a></h3>
+<p><a href="https://disqus.com/">Disqus</a> can be easily integrated into theme by overriding the file <code>post-content.html</code>, and adding <code>disqus</code> section. See full guide <a href="https://squidfunk.github.io/mkdocs-material/setup/adding-a-comment-system/#disqus-integration">here</a>.</p>
+<div class="highlight"><span class="filename">mkdocs.yml</span><pre><span></span><code><span class="nt">extra</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">disqus</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;vuquangtrong-github-io&quot;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">overrides/partials/post-content.html</span><pre><span></span><code>{# edit button #}
+{% if page.edit_url %}
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ page.edit_url }}&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;{{ lang.t(&#39;edit.link.title&#39;) }}&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;md-content__button md-icon&quot;</span><span class="p">&gt;</span>
+        {% include &quot;.icons/material/pencil.svg&quot; %}
+    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+{% endif %}
+
+{% include &quot;partials/post-cover.html&quot; %}
+
+<span class="p">&lt;</span><span class="nt">hr</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;screen-only&quot;</span><span class="p">&gt;</span>
+
+{% include &quot;partials/post-toc.html&quot; %}
+
+{# show the children pages if no content #}
+{% if page.markdown == &#39;&#39; and page.parent.children %}
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Posts in this section:<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+        {% for obj in page.parent.children %}
+            {% if obj.is_section %}
+                {% set p = obj.children[0] %}
+                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ p.canonical_url }}&quot;</span><span class="p">&gt;</span>
+                        {%- if p.meta and p.meta.title -%}
+                            {{- p.meta.title -}}
+                        {%- else -%}
+                            {{- p.title -}}
+                        {%- endif -%}
+                    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+            {% endif %}
+        {% endfor %}
+    <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+{% else %}
+    {# content #}
+    {{ page.content }}
+{% endif %}
+
+{% if page.markdown == &#39;&#39; and page.parent.children %}
+{% else %}
+    {# comment #}
+    {% include &quot;partials/disqus.html&quot; %}
+{% endif %}
+</code></pre></div>
+<div class="highlight"><span class="filename">overrides/partials/disqus.html</span><pre><span></span><code><span class="cm">&lt;!-- Get setting from mkdocs.yml, but allow page-level overrides --&gt;</span>
+{% set disqus = config.extra.disqus %}
+{% if page.meta and page.meta.disqus is string %}
+    {% set disqus = page.meta.disqus %}
+{% endif %}
+
+<span class="cm">&lt;!-- Inject Disqus into current page --&gt;</span>
+{% if not page.is_homepage and disqus %}
+    <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;__comments&quot;</span><span class="p">&gt;</span>{{ lang.t(&quot;meta.comments&quot;) }}<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;disqus_thread&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">disqus_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;{{ page.canonical_url }}&quot;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">identifier</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                </span><span class="s2">&quot;{{ page.canonical_url | replace(config.site_url, &#39;&#39;) }}&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="cm">/* Set up for the first time */</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">DISQUS</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;undefined&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">var</span><span class="w"> </span><span class="nx">script</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="nx">script</span><span class="p">.</span><span class="k">async</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">            </span><span class="nx">script</span><span class="p">.</span><span class="nx">src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://{{ disqus }}.disqus.com/embed.js&quot;</span>
+<span class="w">            </span><span class="nx">script</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&quot;data-timestamp&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">())</span>
+
+<span class="w">            </span><span class="cm">/* Inject script tag */</span>
+<span class="w">            </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">script</span><span class="p">)</span>
+
+<span class="w">        </span><span class="cm">/* Set up on navigation (instant loading) */</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">DISQUS</span><span class="p">.</span><span class="nx">reset</span><span class="p">({</span>
+<span class="w">                </span><span class="nx">reload</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">config</span><span class="o">:</span><span class="w"> </span><span class="nx">disqus_config</span>
+<span class="w">            </span><span class="p">})</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+{% endif %}
+</code></pre></div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:serif">
+<p><a href="https://en.wikipedia.org/wiki/Serif">https://en.wikipedia.org/wiki/Serif</a>&#160;<a class="footnote-backref" href="#fnref:serif" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:zero">
+<p><a href="https://en.wikipedia.org/wiki/Slashed_zero">https://en.wikipedia.org/wiki/Slashed_zero</a>&#160;<a class="footnote-backref" href="#fnref:zero" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+    
+    <!-- Get setting from mkdocs.yml, but allow page-level overrides -->
+
+
+
+<!-- Inject Disqus into current page -->
+
+    <h2 id="__comments">Comments</h2>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = "https://www.github.com/bhardwajAbhi/blog/site-setup/create-site-project/"
+            this.page.identifier =
+                "blog/site-setup/create-site-project/"
+        }
+
+        /* Set up for the first time */
+        if (typeof DISQUS === "undefined") {
+            var script = document.createElement("script")
+            script.async = true
+            script.src = "https://bhardwajAbhi.github.io.disqus.com/embed.js"
+            script.setAttribute("data-timestamp", Date.now())
+
+            /* Inject script tag */
+            document.body.appendChild(script)
+
+        /* Set up on navigation (instant loading) */
+        } else {
+            DISQUS.reset({
+                reload: true,
+                config: disqus_config
+            })
+        }
+    </script>
+
+
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 Abhishek Bhardwaj </br> <a href="https://github.com/vuquangtrong/mkdocs-material-blog">Blog Theme</a> / <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>
+
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/bhardwajAbhi" target="_blank" rel="noopener" title="Abhishek" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://facebook.com/_AbhiBhardwaj" target="_blank" rel="noopener" title="Abhishek" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/bhardwaj-abhi" target="_blank" rel="noopener" title="Abhishek" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "content.code.annotate", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../../../assets/mathjax.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+        
+          <script src="../../../assets/view-bigimg.js"></script>
+        
+      
+        
+          <script src="../../../assets/extra.js"></script>
+        
+      
+    
+  </body>
+</html>
