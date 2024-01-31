@@ -30,7 +30,7 @@ I'm an Android App developer, who designs and develops beautiful native Android 
 
         ## :material-book: Posts
 
-        Each post is what I've learned, and I wrote them down to share. Hope you'll find something interesting there.
+        Every post is a bit of what I've learned lately. See if there's something you like.
 
         [Read Posts](blog/){.md-button}
 
@@ -38,7 +38,7 @@ I'm an Android App developer, who designs and develops beautiful native Android 
 
         ## :material-file-code: Projects
 
-        A list of my projects which are done for learning and practicing in free time. Wanna give me a hand ?! Let's do it together.
+        Take a peek at the projects I've taken on during my free time for learning. Ready to team up?
 
         [See Projects](projects/){.md-button}
 
