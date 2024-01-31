@@ -47,6 +47,10 @@ theme:
     - navigation.indexes # link an index page to its parent folder
     - navigation.top # show the back-to-top button
     # - toc.integrate # show the table of contents in the navigation panel
+
+    # Code copy button
+    # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-copy-button
+    - content.code.copy
     
     # Search
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search
