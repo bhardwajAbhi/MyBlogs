@@ -32,7 +32,7 @@ I'm an Android App developer, who designs and develops beautiful native Android 
 
         Every post is a bit of what I've learned lately. See if there's something you like.
 
-        [Read Posts](blog/){.md-button}
+        [Read Posts](posts/){.md-button}
 
     ::: col
 
