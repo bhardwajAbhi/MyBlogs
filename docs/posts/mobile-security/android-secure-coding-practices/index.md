@@ -258,7 +258,6 @@ decodeValue = Hello, world!
 
 - Only the private key can decrypt the data, and that should never be stored on the phone.
 
-
 ## 6. Cryptographically Secure Data
 
 !!! hint " "
