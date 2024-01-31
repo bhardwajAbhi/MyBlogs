@@ -67,7 +67,7 @@ function getItemExpiry(key) {
         }
         if (!remember_password) {
             // fallback site_path
-            remember_password = sessionStorage.getItem('encryptcontent_' + encodeURIComponent("bhardwajAbhi/"));
+            remember_password = sessionStorage.getItem('encryptcontent_' + encodeURIComponent("MyBlogs/"));
             if (!remember_password) {
                 // fallback global
                 remember_password = sessionStorage.getItem('encryptcontent_');
@@ -177,7 +177,7 @@ function decrypt_action(password_input, encrypted_content, decrypted_content) {
 function decryptor_reaction(content_decrypted, password_input, fallback_used, set_global, save_cookie) {
     let location_path;
     if (set_global) {
-        location_path = "/bhardwajAbhi/"; //global password decrypts at "/{site_path}"
+        location_path = "/MyBlogs/"; //global password decrypts at "/{site_path}"
     } else {
         location_path = encryptcontent_path;
     }
