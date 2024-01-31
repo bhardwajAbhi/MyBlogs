@@ -1,0 +1,1731 @@
+
+
+
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Coding practices that a developer need to follow in order to design and implement robust, rugged, and secure apps for Android device.">
+      
+      
+        <meta name="author" content="Abhishek Bhardwaj (abhishekbhardwaj090@gmail.com)">
+      
+      
+        <link rel="canonical" href="https://bhardwajabhi.github.io/MyBlogs/posts/mobile-security/android-secure-coding-practices/">
+      
+      
+        <link rel="prev" href="../mobile-security-trends-2023/">
+      
+      
+        <link rel="next" href="../../../tags/">
+      
+      <link rel="icon" href="../../../favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.21">
+    
+    
+    <title>Secure Coding Practices - Abhishek Bhardwaj</title>
+
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Serif";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/view-bigimg.css">
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Secure Coding Practices - Abhishek Bhardwaj" />
+    <meta property="og:description" content="Coding practices that a developer need to follow in order to design and implement robust, rugged, and secure apps for Android device. - Tutorials, Blogs, Guides on Android." />
+    <meta property="og:url" content="https://bhardwajabhi.github.io/MyBlogs/posts/mobile-security/android-secure-coding-practices/" />
+    <meta property="og:image" content="https://bhardwajabhi.github.io/MyBlogs/posts/mobile-security/android-secure-coding-practices/10_what_is_mobile_sec.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Secure Coding Practices - Abhishek Bhardwaj" />
+    <meta name="twitter:description" content="Coding practices that a developer need to follow in order to design and implement robust, rugged, and secure apps for Android device. - Tutorials, Blogs, Guides on Android." />
+    <meta name="twitter:image" content="https://bhardwajabhi.github.io/MyBlogs/posts/mobile-security/android-secure-coding-practices/10_what_is_mobile_sec.png" />
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="deep-orange">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="">
+    <a href="../../.." title="Abhishek Bhardwaj" class="md-header__button md-logo" aria-label="Abhishek Bhardwaj" data-md-component="logo">
+      
+  <img src="../../../assets/logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Abhishek Bhardwaj
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Secure Coding Practices
+            
+          </span>
+        </div>
+        
+            <style>
+                .md-header__nav {
+                    float: right;
+                }
+                .md-header__nav__inner:not([hidden]) {
+                    display: flex;
+                }
+            </style>
+            <div class="md-header__nav">
+                <nav class="md-header__nav__inner">
+                    
+                        
+                        <a href="../mobile-security-trends-2023/" aria-label="Previous: 2023 Mobile Security Trends" rel="prev">
+                            <div class="md-footer__button md-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                            </div>
+                        </a>
+                    
+                    
+                        
+                        <a href="../../../tags/" aria-label="Next: Tags" rel="next">
+                            <div class="md-footer__button md-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+                            </div>
+                        </a>
+                    
+                </nav>
+            </div>
+        
+    </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Posts
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tags/" class="md-tabs__link">
+        Tags
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+    
+    
+
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Abhishek Bhardwaj" class="md-nav__button md-logo" aria-label="Abhishek Bhardwaj" data-md-component="logo">
+      
+  <img src="../../../assets/logo.jpg" alt="logo">
+
+    </a>
+    Abhishek Bhardwaj
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">Posts</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Posts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Posts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Recent posts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Mobile security
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mobile security" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Mobile security
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_1" type="checkbox" id="__nav_2_2_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../mobile-security-trends-2023/">Latest Trends in Mobile Security (2023)</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Latest Trends in Mobile Security (2023)" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Latest Trends in Mobile Security (2023)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-security-trends-2023/" class="md-nav__link">
+        2023 Mobile Security Trends
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_2" type="checkbox" id="__nav_2_2_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Secure Coding Practices in Android</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Secure Coding Practices in Android" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Secure Coding Practices in Android
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc" checked
+        onchange='(function(){
+          var _pid = "__nav_2_2_2_1".slice(0, -2);
+          var _pel = document.getElementById(_pid);
+          _pel.checked  = false;
+        })()'
+      >
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Secure Coding Practices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Secure Coding Practices
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-verify-for-security-early-and-often" class="md-nav__link">
+    1. Verify for Security Early and Often
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Verify for Security Early and Often">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#securing-application-components" class="md-nav__link">
+    Securing Application Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protecting-components-with-custom-permissions" class="md-nav__link">
+    Protecting components with Custom Permissions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-parameterized-queries" class="md-nav__link">
+    2. Parameterized Queries
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Parameterized Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql-injection" class="md-nav__link">
+    SQL Injection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preventing-command-injection" class="md-nav__link">
+    Preventing Command Injection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-encode-data" class="md-nav__link">
+    3. Encode Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-validate-all-inputs" class="md-nav__link">
+    4. Validate All Inputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-implement-identity-and-authentication-controls" class="md-nav__link">
+    5. Implement Identity and Authentication Controls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-cryptographically-secure-data" class="md-nav__link">
+    6. Cryptographically Secure Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-implement-logging-and-intrusion-detection" class="md-nav__link">
+    7. Implement Logging and Intrusion Detection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-leverage-security-frameworks-and-libraries" class="md-nav__link">
+    8. Leverage Security Frameworks and Libraries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-monitor-error-and-exception-handling" class="md-nav__link">
+    9. Monitor Error and Exception Handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-handling-intents" class="md-nav__link">
+    10. Handling Intents
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../android-app-analysis" class="md-nav__link">
+        Mobile Application Security Analysis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../tags/">Tags</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Tags" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tags
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+
+                
+                
+                    <br>
+                    <br>
+                    <div class="tag-cloud-nav">
+                        
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+    
+      
+        
+      
+    
+  
+
+  
+    
+    
+      
+        
+        
+        
+        
+          
+          
+        
+        
+        
+          
+        
+      
+    
+  
+
+  
+
+
+<style>
+    .tag-cloud {
+        margin-top:0;
+        margin-bottom: 0.5em;
+    }
+    .tag-cloud-content {
+        padding: 0 0.6rem;
+        
+    }
+</style>
+
+<p class="md-nav tag-cloud">
+  <label class="md-nav__title">Tag cloud</label>
+</p>
+<div class="tag-cloud-content">
+    
+        
+            
+            
+            
+            <a class="tag" href="https://bhardwajabhi.github.io/MyBlogs/tags/#secure coding, secure coding practices, android security, android best practices">
+                <span class="tag-name" style="
+                    
+                        
+                    
+                        font-size:0.55rem;
+                    
+                    color:DarkGoldenrod;
+                ">secure coding, secure coding practices, android security, android best practices&nbsp;
+                </span>
+                <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+            
+            
+            
+            <a class="tag" href="https://bhardwajabhi.github.io/MyBlogs/tags/#mobile security trends, mobile security jobs">
+                <span class="tag-name" style="
+                    
+                        
+                    
+                        font-size:0.55rem;
+                    
+                    color:DarkGreen;
+                ">mobile security trends, mobile security jobs&nbsp;
+                </span>
+                <!--<sup class="tag-count">1</sup>-->
+            </a>
+        
+    
+</div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+        <div class="md-sidebar__scrollwrap">
+            <div class="md-sidebar__inner">
+                
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-verify-for-security-early-and-often" class="md-nav__link">
+    1. Verify for Security Early and Often
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Verify for Security Early and Often">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#securing-application-components" class="md-nav__link">
+    Securing Application Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protecting-components-with-custom-permissions" class="md-nav__link">
+    Protecting components with Custom Permissions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-parameterized-queries" class="md-nav__link">
+    2. Parameterized Queries
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Parameterized Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql-injection" class="md-nav__link">
+    SQL Injection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preventing-command-injection" class="md-nav__link">
+    Preventing Command Injection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-encode-data" class="md-nav__link">
+    3. Encode Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-validate-all-inputs" class="md-nav__link">
+    4. Validate All Inputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-implement-identity-and-authentication-controls" class="md-nav__link">
+    5. Implement Identity and Authentication Controls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-cryptographically-secure-data" class="md-nav__link">
+    6. Cryptographically Secure Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-implement-logging-and-intrusion-detection" class="md-nav__link">
+    7. Implement Logging and Intrusion Detection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-leverage-security-frameworks-and-libraries" class="md-nav__link">
+    8. Leverage Security Frameworks and Libraries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-monitor-error-and-exception-handling" class="md-nav__link">
+    9. Monitor Error and Exception Handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-handling-intents" class="md-nav__link">
+    10. Handling Intents
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+    
+
+
+
+<style>
+    .md-typeset .cover {
+        margin-bottom: 1em;
+    }
+    .md-typeset .page-category {
+        color: gray;
+        font-size: large;
+    }
+    .md-typeset .page-title {
+        margin-left: -0.0625em;
+    }
+    .md-typeset .page-extra {
+        color: gray;
+        font-size: small;
+    }
+    .md-typeset .page-tags {
+        margin: 0;
+    }
+    .md-typeset .page-date {
+        margin: 0;
+        text-align: end;
+    }
+    @media print {
+        .md-typeset .cover {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .md-typeset .cover + * {
+            margin-top: 0;
+        }
+    }
+</style>
+
+<div class="cover">
+    
+    
+
+    
+    <h1 class="page-title"> Secure Coding Practices </h1>
+
+    
+    
+        <p class="page-description">
+            Coding practices that a developer need to follow in order to design and implement robust, rugged, and secure apps for Android device.
+        </p>
+    
+
+    
+        <div class="page-extra row">
+            <div class="col">
+            
+                <p class="page-tags">
+                    
+                        <a class="tag" href="https://bhardwajabhi.github.io/MyBlogs/tags/#secure coding, secure coding practices, android security, android best practices">
+                            <span class="tag-name">
+                                #secure coding, secure coding practices, android security, android best practices &nbsp;
+                            </span>
+                        </a>
+                    
+                </p>
+            
+            
+            </div>
+            <div class="col">
+                <p class="page-date">
+                    <span>
+                    
+                        Last update:
+                        2024-01-31
+                    
+                    </span>
+                </p>
+            </div>
+        </div>
+    
+</div>
+
+<hr class="screen-only">
+
+
+<style>
+    .md-typeset .toc {
+        display: none;
+    }
+    .md-typeset .toc label {
+        display: none;
+    }
+    .md-typeset .toc .md-nav {
+        font-size: unset;
+        line-height: 1.6;
+    }
+    .md-typeset .toc .md-nav--secondary {
+        margin-left: -2em;
+    }
+    .md-typeset .toc .md-nav__list {
+        margin: 0;
+    }
+    .md-typeset .toc ul {
+        list-style: none;
+    }
+    @media print {
+        .md-typeset .toc {
+            display: block;
+            page-break-after: always;
+        }
+        .md-typeset .toc .md-nav__link {
+            color: var(--md-typeset-a-color);
+        }
+        .md-typeset .toc .md-nav__link.md-nav__link--active {
+            font-weight: unset;
+        }
+        .md-typeset .toc + * {
+            margin-top: 0;
+        }
+    }
+</style>
+
+<div class="toc">
+    <h2>Table of Content</h2>
+    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-verify-for-security-early-and-often" class="md-nav__link">
+    1. Verify for Security Early and Often
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Verify for Security Early and Often">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#securing-application-components" class="md-nav__link">
+    Securing Application Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protecting-components-with-custom-permissions" class="md-nav__link">
+    Protecting components with Custom Permissions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-parameterized-queries" class="md-nav__link">
+    2. Parameterized Queries
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Parameterized Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sql-injection" class="md-nav__link">
+    SQL Injection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preventing-command-injection" class="md-nav__link">
+    Preventing Command Injection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-encode-data" class="md-nav__link">
+    3. Encode Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-validate-all-inputs" class="md-nav__link">
+    4. Validate All Inputs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-implement-identity-and-authentication-controls" class="md-nav__link">
+    5. Implement Identity and Authentication Controls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-cryptographically-secure-data" class="md-nav__link">
+    6. Cryptographically Secure Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-implement-logging-and-intrusion-detection" class="md-nav__link">
+    7. Implement Logging and Intrusion Detection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-leverage-security-frameworks-and-libraries" class="md-nav__link">
+    8. Leverage Security Frameworks and Libraries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-monitor-error-and-exception-handling" class="md-nav__link">
+    9. Monitor Error and Exception Handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-handling-intents" class="md-nav__link">
+    10. Handling Intents
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+</div>
+
+
+
+    
+    <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
+<p>With the Android platform fast becoming a target of malicious hackers, applications security is no longer an add-on, but a crucial part of the developer’s job.</p>
+<p>This post provides secure coding practices that a developer need to follow in order to design and implement robust, rugged, and secure apps for Android device.</p>
+<h2 id="1-verify-for-security-early-and-often">1. Verify for Security Early and Often<a class="headerlink" href="#1-verify-for-security-early-and-often" title="Permanent link">#</a></h2>
+<h3 id="securing-application-components">Securing Application Components<a class="headerlink" href="#securing-application-components" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>Application Components are the essential building blocks of an Android Application.</p>
+</li>
+<li>
+<p>Each component is an entry point through which the system or a user can enter your application.</p>
+</li>
+<li>
+<p>Four major Android Application Components are: </p>
+<ul>
+<li>Activities</li>
+<li>Services</li>
+<li>Content Providers</li>
+<li>Broadcast Receivers</li>
+</ul>
+</li>
+<li>
+<p>One of the common mistakes while developing applications is unintentionally leaving application components exposed.</p>
+</li>
+<li>
+<p>Application components can be secured both by making proper use of the <mark><strong>AndroidManifest.xml</strong></mark> file and by forcing permission checks at code level.</p>
+</li>
+<li>
+<p>These two factors of application security make the permissions framework quite flexible and allow you to limit the number of applications accessing your components in quite a granular way.</p>
+</li>
+<li>
+<p>The <mark><strong>android:exported</strong></mark> attribute defines whether a component can be invoked by other applications.</p>
+</li>
+<li>
+<p>If any of your application components do not need to be invoked by other applications or need to be explicitly shielded from interaction with the components on the rest of the Android system (other than components internal to your application)</p>
+</li>
+<li>
+<p>You should add the following attribute to the application component&rsquo;s XML element:</p>
+</li>
+</ul>
+<div class="highlight"><span class="filename">AndroidManifest.xml</span><pre><span></span><code><span class="hll"><span class="linenos" data-linenos="1 "></span><span class="o">&lt;[</span><span class="n">component</span><span class="o">-</span><span class="n">name</span><span class="o">]</span><span class="w"> </span><span class="n">android</span><span class="p">:</span><span class="n">exported</span><span class="o">=</span><span class="s">&quot;false&quot;</span><span class="o">&gt;</span>
+</span><span class="linenos" data-linenos="2 "></span><span class="p">...</span>
+<span class="linenos" data-linenos="3 "></span><span class="o">&lt;/[</span><span class="n">component</span><span class="o">-</span><span class="n">name</span><span class="o">]&gt;</span>
+</code></pre></div>
+<ul>
+<li>Here the [component name] would either be an activity, provider, service or a receiver.</li>
+</ul>
+<h3 id="protecting-components-with-custom-permissions">Protecting components with Custom Permissions<a class="headerlink" href="#protecting-components-with-custom-permissions" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>The Android platform defines a set of default permissions which are used to secure system services and application components.</p>
+</li>
+<li>
+<p>Largely, these permissions work in the most generic case, but often when sharing bespoke functionality or components between applications it will require a more tailored use of the permissions framework.</p>
+</li>
+<li>
+<p><strong>This is facilitated by defining custom permissions</strong>.</p>
+</li>
+</ul>
+<hr />
+<p><strong>Following snippets demonstrates how you can define your own custom permissions</strong>:</p>
+<ol>
+<li>
+<p>Before adding any custom permissions, you need to declare string resources for the permission labels. You can do this by editing the strings.xml file in your application project folder under <mark><strong>res/values/strings.xml</strong></mark>:
+<div class="highlight"><span class="filename">res/values/strings.xml</span><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="o">&lt;</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;custom_permission_label&quot;</span><span class="o">&gt;</span><span class="n">Custom</span><span class="w"> </span><span class="n">Permission</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Adding normal protection-level custom permissions to your application can be done by adding the following lines to your <mark><strong>AndroidManifest.xml</strong></mark> file:
+<div class="highlight"><span class="filename">AndroidManifest.xml</span><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="o">&lt;</span><span class="n">permission</span><span class="w"> </span><span class="n">android</span><span class="p">:</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;android.permission.CUSTOM_PERMISSION&quot;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nl">android</span><span class="p">:</span><span class="n">protectionLevel</span><span class="o">=</span><span class="s">&quot;normal&quot;</span>
+<span class="linenos" data-linenos="3 "></span><span class="nl">android</span><span class="p">:</span><span class="n">description</span><span class="o">=</span><span class="s">&quot;my custom permission&quot;</span>
+<span class="linenos" data-linenos="4 "></span><span class="nl">android</span><span class="p">:</span><span class="n">label</span><span class="o">=</span><span class="s">&quot;@string/custom_permission_label&quot;</span><span class="o">&gt;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Making use of this permission works the same as any other permission; you need to add it to the <mark><strong>android:permission</strong></mark> attribute of an application component.
+<div class="highlight"><span class="filename">AndroidManifest.xml</span><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="o">&lt;[</span><span class="n">component</span><span class="o">-</span><span class="n">name</span><span class="o">]</span><span class="w"> </span><span class="p">...</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">android</span><span class="p">:</span><span class="n">permission</span><span class="o">=</span><span class="s">&quot;android.permission.CUSTOM_PERMISSION&quot;</span><span class="o">&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="o">&lt;/[</span><span class="n">component</span><span class="o">-</span><span class="n">name</span><span class="o">]&gt;</span>
+</code></pre></div>
+Here the [component name] would either be an activity, provider, service or a receiver.</p>
+</li>
+<li>
+<p>You can also allow other applications to request this permission by adding the <mark><strong>&lt;uses-permission/&gt;</strong></mark> tag to an application&rsquo;s AndroidManifest.xml file:
+<div class="highlight"><span class="filename">AndroidManifest.xml</span><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span><span class="w"> </span><span class="n">android</span><span class="p">:</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;android.permission.CUSTOM_PERMISSION&quot;</span><span class="o">/&gt;</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>The breakdown of the attributes of <mark><strong>&lt;permission&gt;</strong></mark> element is as follows</strong>:</p>
+<ul>
+<li>
+<p><strong>android:name</strong> - This defines the name of the permissions, which is the string value that will be used to reference this permission.</p>
+</li>
+<li>
+<p><strong>android:protectionLevel</strong> - This defines the protection level of the permission and controls whether users will be prompted to grant the permission. Following are the Protection Levels:</p>
+<ul>
+<li>
+<p><strong>normal</strong> -  This permission is used to define non dangerous permissions, these permissions will not be prompted and may be granted autonomously.</p>
+</li>
+<li>
+<p><strong>dangerous</strong> - This permission is used to define permissions that expose the user to considerable fiscal, reputational, and legal risk.</p>
+</li>
+<li>
+<p><strong>signature</strong> -  This permission is granted autonomously to applications that are signed with the same key as the application that defines them.</p>
+</li>
+<li>
+<p><strong>signatureOrSystem</strong> - This permission is automatically granted to any application that forms a part of the system image or is signed with the same key as the application that defines them.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-parameterized-queries">2. Parameterized Queries<a class="headerlink" href="#2-parameterized-queries" title="Permanent link">#</a></h2>
+<h3 id="sql-injection">SQL Injection<a class="headerlink" href="#sql-injection" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>One specific form of a class of vulnerabilities known as command injection.</p>
+</li>
+<li>
+<p>In this type of vulnerability, input from an outside source is used directly as part of a command, in this case a SQL expression that is passed to a database interpreter.</p>
+</li>
+</ul>
+<p><strong>For Example:</strong></p>
+<ul>
+<li>
+<p>consider a case where the user supplies a username and password to an application, which must then verify that the combination is valid to allow access.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">loginQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT * FROM useraccounts WHERE userID = &#39;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;userID&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;&#39; AND password = &#39;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;password&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;&#39;&quot;</span><span class="p">;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>However, if whoever is submitting the information were to submit these values:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">userID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">&#39;</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="o">--</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">doesNotMatter</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>The resulting query that would be supplied to the SQL database interpreter would be:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">FROM</span><span class="w"> </span><span class="n">useraccounts</span><span class="w"> </span><span class="n">WHERE</span><span class="w"> </span><span class="n">userID</span><span class="o">=</span><span class="err">&#39;&#39;</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="mi">1</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="n">AND</span><span class="w"> </span><span class="n">password</span><span class="o">=</span><span class="err">&#39;</span><span class="n">doesNotMatter</span><span class="err">&#39;</span>
+</code></pre></div>
+This SQL statement would then evaluate and return all of the data from the user accounts table, as the WHERE condition would always be true (due to the OR 1=1 condition) and the password checking clause would be commented out.</p>
+</li>
+</ul>
+<hr />
+<p><strong>This unintended behavior is made possible because of two primary problems.</strong></p>
+<ul>
+<li>
+<p><strong>First</strong>, our app did not properly validate the input that was received before using that input to form the SQL statement to be submitted to the database interpreter.</p>
+</li>
+<li>
+<p><strong>Second</strong>, the problem is enabled because when query strings are constructed in such a manner, the database system cannot tell the difference between code and data; the initial apostrophe <mark>(&lsquo;)</mark> submitted in the <em>userID</em> is actually data, but is being interpreted as code because the database cannot tell that it should be interpreted as a literal data value.</p>
+</li>
+</ul>
+<h3 id="preventing-command-injection">Preventing Command Injection<a class="headerlink" href="#preventing-command-injection" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>Looking at an example similar to the earlier one.</p>
+</li>
+<li>
+<p>Let&rsquo;s consider looking up a user’s last name in a database. The unsafe way to form this statement looks something like this:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">SQLiteDatabase</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dbHelper</span><span class="p">.</span><span class="na">getWriteableDatabase</span><span class="p">();</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">String</span><span class="w"> </span><span class="n">userQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT lastName FROM useraccounts WHERE userID = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;userID&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">String</span><span class="w"> </span><span class="n">userLastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prepStatement</span><span class="p">.</span><span class="na">simpleQueryForString</span><span class="p">();</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Here is the proper way to perform such a query against the database, where the command is separated from the data:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">SQLiteDatabase</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dbHelper</span><span class="p">.</span><span class="na">getWriteableDatabase</span><span class="p">();</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">String</span><span class="w"> </span><span class="n">userQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT lastName FROM useraccounts WHERE userID = ?&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">SQLiteStatement</span><span class="w"> </span><span class="n">prepStatement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="na">compileStatement</span><span class="w"> </span><span class="p">(</span><span class="n">userQuery</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">prepStatement</span><span class="p">.</span><span class="na">bindString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;userID&quot;</span><span class="p">));</span><span class="w"> </span>
+<span class="linenos" data-linenos="5 "></span><span class="n">String</span><span class="w"> </span><span class="n">userLastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prepStatement</span><span class="p">.</span><span class="na">simpleQueryForString</span><span class="p">();</span>
+</code></pre></div></p>
+</li>
+</ul>
+<p>By taking advantage of the <strong>compileStatement</strong> capability, we can effectively separate commands from data in SQL statements, by using the <mark><strong>?</strong></mark> marker. This is known as a parameterized query, as the query string includes placeholders <mark>(question marks)</mark> to mark the data and the values for those pieces of data are filled in independently (by the bindString() call in our example).</p>
+<h2 id="3-encode-data">3. Encode Data<a class="headerlink" href="#3-encode-data" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>Encoding your data is a solution you should consider if you work with slightly less sensitive data or are looking for a way to organize your data.</p>
+</li>
+<li>
+<p>Most encoding methods rely on algorithms to compress the data and reduce its complexity.</p>
+</li>
+<li>
+<p>The same algorithm used to encode the data is needed to access the data in a readable format.</p>
+</li>
+<li>
+<p>Encoding keeps your data safe since the data is not readable unless you have access to the algorithms that were used to encode it.</p>
+</li>
+<li>
+<p>This is a good way to protect your data from theft since any stolen data would not be usable.</p>
+</li>
+<li>
+<p>Encoding is an ideal solution if you need to have third parties access your data but do not want to have everyone be able to access some sensitive data.</p>
+</li>
+<li>
+<p>Since encoding removes redundancies from data, the size of your data will be a lot smaller.</p>
+</li>
+<li>
+<p>This results in faster input speed when data is processed or saved.
+Since encoded data is smaller in size, you should be able to save space on your storage devices.</p>
+</li>
+<li>
+<p>Encoded data is easy to organize, even if the original data was mostly unstructured.</p>
+</li>
+<li>
+<p>This is how we can encode a normal string to a Base64 encoding scheme.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">testValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, world!&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">encodeValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Base64</span><span class="p">.</span><span class="na">encode</span><span class="p">(</span><span class="n">testValue</span><span class="p">.</span><span class="na">getBytes</span><span class="p">(),</span><span class="w"> </span><span class="n">Base64</span><span class="p">.</span><span class="na">DEFAULT</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">decodeValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Base64</span><span class="p">.</span><span class="na">decode</span><span class="p">(</span><span class="n">encodeValue</span><span class="p">,</span><span class="w"> </span><span class="n">Base64</span><span class="p">.</span><span class="na">DEFAULT</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;ENCODE_DECODE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;defaultValue = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">testValue</span><span class="p">);</span>
+<span class="linenos" data-linenos="7 "></span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;ENCODE_DECODE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;encodeValue = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">encodeValue</span><span class="p">));</span>
+<span class="linenos" data-linenos="8 "></span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="s">&quot;ENCODE_DECODE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;decodeValue = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">decodeValue</span><span class="p">));</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Output</span><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">defaultValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Hello</span><span class="p">,</span><span class="w"> </span><span class="n">world</span><span class="o">!</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">encodeValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SGVsbG8sIHdvcmxkIQ</span><span class="o">==</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">decodeValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Hello</span><span class="p">,</span><span class="w"> </span><span class="n">world</span><span class="o">!</span>
+</code></pre></div></p>
+</li>
+</ul>
+<h2 id="4-validate-all-inputs">4. Validate All Inputs<a class="headerlink" href="#4-validate-all-inputs" title="Permanent link">#</a></h2>
+<div class="admonition hint">
+<p class="admonition-title"> </p>
+<p>Coming Soon</p>
+</div>
+<h2 id="5-implement-identity-and-authentication-controls">5. Implement Identity and Authentication Controls<a class="headerlink" href="#5-implement-identity-and-authentication-controls" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>Providing a secure login mechanism for your users is harder than on the Web.</p>
+</li>
+<li>
+<p>The trend on mobile devices is to make things as easy as possible for the user.</p>
+</li>
+<li>
+<p>But if you make it too easy to login into your app, you run the risk of unauthorized users gaining access to sensitive data by going around this authentication.</p>
+</li>
+<li>
+<p>The following tokens are common on Android devices as a part of login process:</p>
+<ul>
+<li>Username and Password</li>
+<li>Device information, such as DeviceID and AndroidID</li>
+<li>Network information, such as IP address</li>
+</ul>
+</li>
+<li>
+<p>The classic login of username and password is still the most common authentication on an Android phone.</p>
+</li>
+<li>
+<p>Let’s look at some best practices for user authentication. </p>
+</li>
+<li>
+<p>The best practices are as follows:</p>
+<ul>
+<li>No password caching</li>
+<li>Minimum password length</li>
+<li>Multi-factor authentication</li>
+<li>Server-side as well as client-side authentication</li>
+</ul>
+</li>
+<li>
+<p>Do not save or cache username, and especially password, information on the phone, as there is always a risk that it will be found and decrypted. </p>
+</li>
+<li>
+<p>Even if you’re encrypting the password, if you’re also storing the key in the APK then it’s going to be unencrypted.</p>
+</li>
+<li>
+<p>It is better not to store passwords, if you can get away with it, and make the user Log In each time.</p>
+</li>
+<li>
+<p><strong>Try to enforce a minimum password length</strong> - passwords of less than six characters are highly prone to a brute force attack. Financial apps should have stricter policies than other apps.</p>
+</li>
+<li>
+<p><strong>Validate email addresses</strong> - this can be done either using regular expressions or via an email link during setup or, better still, using both approaches.</p>
+</li>
+<li>
+<p>If you do update your password standards, notify your existing customers when they login again to update their passwords.</p>
+</li>
+<li>
+<p>It’s becoming very common for applications to use a <strong>Two-Factor Authentication</strong> where a randomly generated PIN number is sent via SMS message to user’s phone before he can log in to the application. </p>
+</li>
+<li>
+<p>We can also use the info like DeviceID, IP Address, and Location information to add extra layers of information.</p>
+</li>
+<li>
+<p><strong>Access control</strong> doesn’t end at the client; it needs to be enforced at the server, too. </p>
+</li>
+<li>
+<p>Some back-end servers mistakenly rely on the client app to perform all authentication and assume that the web server doesn’t need to do any authentication.</p>
+</li>
+<li>
+<p>The server should also check for valid credentials each time or use a session token once again over SSL.</p>
+</li>
+<li>
+<p>It should also check for unusual activity, such as someone performing a bruteforce attack, and notify the user via email of unusual login activity.</p>
+</li>
+<li>
+<p>If you are saving any personal, healthcare, or financial information, you should use an <strong>asymmetric</strong> or <strong>public/private</strong> key. </p>
+</li>
+<li>
+<p>This does require a round trip back to the server to decrypt the data, but if the phone is compromised, the user’s data will remain secure.</p>
+</li>
+<li>
+<p>Only the private key can decrypt the data, and that should never be stored on the phone.</p>
+</li>
+</ul>
+<h2 id="6-cryptographically-secure-data">6. Cryptographically Secure Data<a class="headerlink" href="#6-cryptographically-secure-data" title="Permanent link">#</a></h2>
+<div class="admonition hint">
+<p class="admonition-title"> </p>
+<p>Coming Soon</p>
+</div>
+<h2 id="7-implement-logging-and-intrusion-detection">7. Implement Logging and Intrusion Detection<a class="headerlink" href="#7-implement-logging-and-intrusion-detection" title="Permanent link">#</a></h2>
+<div class="admonition hint">
+<p class="admonition-title"> </p>
+<p>Coming Soon</p>
+</div>
+<h2 id="8-leverage-security-frameworks-and-libraries">8. Leverage Security Frameworks and Libraries<a class="headerlink" href="#8-leverage-security-frameworks-and-libraries" title="Permanent link">#</a></h2>
+<div class="admonition hint">
+<p class="admonition-title"> </p>
+<p>Coming Soon</p>
+</div>
+<h2 id="9-monitor-error-and-exception-handling">9. Monitor Error and Exception Handling<a class="headerlink" href="#9-monitor-error-and-exception-handling" title="Permanent link">#</a></h2>
+<div class="admonition hint">
+<p class="admonition-title"> </p>
+<p>Coming Soon</p>
+</div>
+<h2 id="10-handling-intents">10. Handling Intents<a class="headerlink" href="#10-handling-intents" title="Permanent link">#</a></h2>
+<div class="admonition hint">
+<p class="admonition-title"> </p>
+<p>Coming Soon</p>
+</div>
+
+
+
+    
+    <!-- Get setting from mkdocs.yml, but allow page-level overrides -->
+
+
+
+<!-- Inject Disqus into current page -->
+
+    <h2 id="__comments">Comments</h2>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = "https://bhardwajabhi.github.io/MyBlogs/posts/mobile-security/android-secure-coding-practices/"
+            this.page.identifier =
+                "posts/mobile-security/android-secure-coding-practices/"
+        }
+
+        /* Set up for the first time */
+        if (typeof DISQUS === "undefined") {
+            var script = document.createElement("script")
+            script.async = true
+            script.src = "https://bhardwajAbhi.github.io.disqus.com/embed.js"
+            script.setAttribute("data-timestamp", Date.now())
+
+            /* Inject script tag */
+            document.body.appendChild(script)
+
+        /* Set up on navigation (instant loading) */
+        } else {
+            DISQUS.reset({
+                reload: true,
+                config: disqus_config
+            })
+        }
+    </script>
+
+
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 Abhishek Bhardwaj </br> <a href="https://github.com/vuquangtrong/mkdocs-material-blog">Blog Theme</a> / <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>
+
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/bhardwajAbhi" target="_blank" rel="noopener" title="Abhishek" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://facebook.com/_AbhiBhardwaj" target="_blank" rel="noopener" title="Abhishek" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/bhardwaj-abhi" target="_blank" rel="noopener" title="Abhishek" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "content.code.copy", "search.suggest", "search.highlight", "search.share", "content.code.annotate", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../../../assets/mathjax.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+        
+          <script src="../../../assets/view-bigimg.js"></script>
+        
+      
+        
+          <script src="../../../assets/extra.js"></script>
+        
+      
+    
+  </body>
+</html>
