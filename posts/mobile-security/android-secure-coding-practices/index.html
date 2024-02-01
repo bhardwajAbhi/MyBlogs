@@ -46,7 +46,7 @@
         <link rel="next" href="../../../tags/">
       
       <link rel="icon" href="../../../favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.21">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
     <title>Secure Coding Practices - Abhishek Bhardwaj</title>
@@ -88,7 +88,7 @@
     <meta property="og:title" content="Secure Coding Practices - Abhishek Bhardwaj" />
     <meta property="og:description" content="Coding practices that a developer need to follow in order to design and implement robust, rugged, and secure apps for Android device. - Tutorials, Blogs, Guides on Android." />
     <meta property="og:url" content="https://bhardwajabhi.github.io/MyBlogs/posts/mobile-security/android-secure-coding-practices/" />
-    <meta property="og:image" content="https://bhardwajabhi.github.io/MyBlogs/posts/mobile-security/android-secure-coding-practices/10_what_is_mobile_sec.png" />
+    <meta property="og:image" content="https://bhardwajabhi.github.io/MyBlogs/posts/mobile-security/android-secure-coding-practices/1_secure_coding_banner.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -97,7 +97,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Secure Coding Practices - Abhishek Bhardwaj" />
     <meta name="twitter:description" content="Coding practices that a developer need to follow in order to design and implement robust, rugged, and secure apps for Android device. - Tutorials, Blogs, Guides on Android." />
-    <meta name="twitter:image" content="https://bhardwajabhi.github.io/MyBlogs/posts/mobile-security/android-secure-coding-practices/10_what_is_mobile_sec.png" />
+    <meta name="twitter:image" content="https://bhardwajabhi.github.io/MyBlogs/posts/mobile-security/android-secure-coding-practices/1_secure_coding_banner.png" />
 
   </head>
   
@@ -616,12 +616,114 @@
     7. Implement Logging and Intrusion Detection
   </a>
   
+    <nav class="md-nav" aria-label="7. Implement Logging and Intrusion Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tamper-detection" class="md-nav__link">
+    Tamper Detection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responding-to-tamper-detection" class="md-nav__link">
+    Responding to Tamper Detection
+  </a>
+  
+    <nav class="md-nav" aria-label="Responding to Tamper Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detect-if-google-play-store-was-the-installer" class="md-nav__link">
+    Detect if Google Play store was the installer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-if-it-runs-on-an-emulator" class="md-nav__link">
+    Detect if it runs on an Emulator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-if-it-runs-on-a-rooted-device" class="md-nav__link">
+    Detect if it runs on a Rooted Device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-if-the-app-has-the-debuggable-flag-enabled" class="md-nav__link">
+    Detect if the app has the “debuggable” flag enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-signature-verification" class="md-nav__link">
+    Application Signature Verification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputting-log-to-logcat" class="md-nav__link">
+    Outputting Log to LogCat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#8-leverage-security-frameworks-and-libraries" class="md-nav__link">
     8. Leverage Security Frameworks and Libraries
   </a>
+  
+    <nav class="md-nav" aria-label="8. Leverage Security Frameworks and Libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#securing-sharedpreferences-data-with-encrypted-sharedpreferences" class="md-nav__link">
+    Securing SharedPreferences data with Encrypted SharedPreferences
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encrypting-a-database-with-sqlcipher" class="md-nav__link">
+    Encrypting a database with SQLCipher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-keystore-provider" class="md-nav__link">
+    Android KeyStore Provider
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-a-symmetric-encryption-key" class="md-nav__link">
+    Generating a Symmetric Encryption Key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -636,6 +738,46 @@
   <a href="#10-handling-intents" class="md-nav__link">
     10. Handling Intents
   </a>
+  
+    <nav class="md-nav" aria-label="10. Handling Intents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intent-redirection" class="md-nav__link">
+    Intent Redirection
+  </a>
+  
+    <nav class="md-nav" aria-label="Intent Redirection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-vs-public-components-can-make-the-difference" class="md-nav__link">
+    Private vs Public components can make the difference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validating-the-source-of-the-intent" class="md-nav__link">
+    Validating the source of the Intent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-sure-that-embedded-intent-is-not-harmful" class="md-nav__link">
+    Make sure that embedded intent is not harmful
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -961,12 +1103,114 @@
     7. Implement Logging and Intrusion Detection
   </a>
   
+    <nav class="md-nav" aria-label="7. Implement Logging and Intrusion Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tamper-detection" class="md-nav__link">
+    Tamper Detection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responding-to-tamper-detection" class="md-nav__link">
+    Responding to Tamper Detection
+  </a>
+  
+    <nav class="md-nav" aria-label="Responding to Tamper Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detect-if-google-play-store-was-the-installer" class="md-nav__link">
+    Detect if Google Play store was the installer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-if-it-runs-on-an-emulator" class="md-nav__link">
+    Detect if it runs on an Emulator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-if-it-runs-on-a-rooted-device" class="md-nav__link">
+    Detect if it runs on a Rooted Device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-if-the-app-has-the-debuggable-flag-enabled" class="md-nav__link">
+    Detect if the app has the “debuggable” flag enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-signature-verification" class="md-nav__link">
+    Application Signature Verification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputting-log-to-logcat" class="md-nav__link">
+    Outputting Log to LogCat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#8-leverage-security-frameworks-and-libraries" class="md-nav__link">
     8. Leverage Security Frameworks and Libraries
   </a>
+  
+    <nav class="md-nav" aria-label="8. Leverage Security Frameworks and Libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#securing-sharedpreferences-data-with-encrypted-sharedpreferences" class="md-nav__link">
+    Securing SharedPreferences data with Encrypted SharedPreferences
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encrypting-a-database-with-sqlcipher" class="md-nav__link">
+    Encrypting a database with SQLCipher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-keystore-provider" class="md-nav__link">
+    Android KeyStore Provider
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-a-symmetric-encryption-key" class="md-nav__link">
+    Generating a Symmetric Encryption Key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -981,6 +1225,46 @@
   <a href="#10-handling-intents" class="md-nav__link">
     10. Handling Intents
   </a>
+  
+    <nav class="md-nav" aria-label="10. Handling Intents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intent-redirection" class="md-nav__link">
+    Intent Redirection
+  </a>
+  
+    <nav class="md-nav" aria-label="Intent Redirection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-vs-public-components-can-make-the-difference" class="md-nav__link">
+    Private vs Public components can make the difference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validating-the-source-of-the-intent" class="md-nav__link">
+    Validating the source of the Intent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-sure-that-embedded-intent-is-not-harmful" class="md-nav__link">
+    Make sure that embedded intent is not harmful
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1044,7 +1328,8 @@
     
 
     
-    <h1 class="page-title"> Secure Coding Practices </h1>
+    <h1 class="page-title"> Secure Coding Practices </h1><p style="color:#bdbdbd"><i>Estimated time to read: 24 minutes</i></p>
+
 
     
     
@@ -1074,7 +1359,7 @@
                     <span>
                     
                         Last update:
-                        2024-01-31
+                        2024-02-01
                     
                     </span>
                 </p>
@@ -1232,12 +1517,114 @@
     7. Implement Logging and Intrusion Detection
   </a>
   
+    <nav class="md-nav" aria-label="7. Implement Logging and Intrusion Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tamper-detection" class="md-nav__link">
+    Tamper Detection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responding-to-tamper-detection" class="md-nav__link">
+    Responding to Tamper Detection
+  </a>
+  
+    <nav class="md-nav" aria-label="Responding to Tamper Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detect-if-google-play-store-was-the-installer" class="md-nav__link">
+    Detect if Google Play store was the installer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-if-it-runs-on-an-emulator" class="md-nav__link">
+    Detect if it runs on an Emulator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-if-it-runs-on-a-rooted-device" class="md-nav__link">
+    Detect if it runs on a Rooted Device
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detect-if-the-app-has-the-debuggable-flag-enabled" class="md-nav__link">
+    Detect if the app has the “debuggable” flag enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-signature-verification" class="md-nav__link">
+    Application Signature Verification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outputting-log-to-logcat" class="md-nav__link">
+    Outputting Log to LogCat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#8-leverage-security-frameworks-and-libraries" class="md-nav__link">
     8. Leverage Security Frameworks and Libraries
   </a>
+  
+    <nav class="md-nav" aria-label="8. Leverage Security Frameworks and Libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#securing-sharedpreferences-data-with-encrypted-sharedpreferences" class="md-nav__link">
+    Securing SharedPreferences data with Encrypted SharedPreferences
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encrypting-a-database-with-sqlcipher" class="md-nav__link">
+    Encrypting a database with SQLCipher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android-keystore-provider" class="md-nav__link">
+    Android KeyStore Provider
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-a-symmetric-encryption-key" class="md-nav__link">
+    Generating a Symmetric Encryption Key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1252,6 +1639,46 @@
   <a href="#10-handling-intents" class="md-nav__link">
     10. Handling Intents
   </a>
+  
+    <nav class="md-nav" aria-label="10. Handling Intents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intent-redirection" class="md-nav__link">
+    Intent Redirection
+  </a>
+  
+    <nav class="md-nav" aria-label="Intent Redirection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#private-vs-public-components-can-make-the-difference" class="md-nav__link">
+    Private vs Public components can make the difference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validating-the-source-of-the-intent" class="md-nav__link">
+    Validating the source of the Intent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-sure-that-embedded-intent-is-not-harmful" class="md-nav__link">
+    Make sure that embedded intent is not harmful
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1422,14 +1849,14 @@ This SQL statement would then evaluate and return all of the data from the user 
 </li>
 <li>
 <p>Let&rsquo;s consider looking up a user’s last name in a database. The unsafe way to form this statement looks something like this:
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">SQLiteDatabase</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dbHelper</span><span class="p">.</span><span class="na">getWriteableDatabase</span><span class="p">();</span>
+<div class="highlight"><span class="filename">Non-Compliant Code</span><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">SQLiteDatabase</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dbHelper</span><span class="p">.</span><span class="na">getWriteableDatabase</span><span class="p">();</span>
 <span class="linenos" data-linenos="2 "></span><span class="n">String</span><span class="w"> </span><span class="n">userQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT lastName FROM useraccounts WHERE userID = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;userID&quot;</span><span class="p">);</span>
 <span class="linenos" data-linenos="3 "></span><span class="n">String</span><span class="w"> </span><span class="n">userLastName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prepStatement</span><span class="p">.</span><span class="na">simpleQueryForString</span><span class="p">();</span>
 </code></pre></div></p>
 </li>
 <li>
 <p>Here is the proper way to perform such a query against the database, where the command is separated from the data:
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">SQLiteDatabase</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dbHelper</span><span class="p">.</span><span class="na">getWriteableDatabase</span><span class="p">();</span>
+<div class="highlight"><span class="filename">Compliant Code</span><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">SQLiteDatabase</span><span class="w"> </span><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dbHelper</span><span class="p">.</span><span class="na">getWriteableDatabase</span><span class="p">();</span>
 <span class="linenos" data-linenos="2 "></span><span class="n">String</span><span class="w"> </span><span class="n">userQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT lastName FROM useraccounts WHERE userID = ?&quot;</span><span class="p">;</span>
 <span class="linenos" data-linenos="3 "></span><span class="n">SQLiteStatement</span><span class="w"> </span><span class="n">prepStatement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="na">compileStatement</span><span class="w"> </span><span class="p">(</span><span class="n">userQuery</span><span class="p">);</span>
 <span class="linenos" data-linenos="4 "></span><span class="n">prepStatement</span><span class="p">.</span><span class="na">bindString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&quot;userID&quot;</span><span class="p">));</span><span class="w"> </span>
@@ -1486,10 +1913,75 @@ Since encoded data is smaller in size, you should be able to save space on your 
 </li>
 </ul>
 <h2 id="4-validate-all-inputs">4. Validate All Inputs<a class="headerlink" href="#4-validate-all-inputs" title="Permanent link">#</a></h2>
-<div class="admonition hint">
-<p class="admonition-title"> </p>
-<p>Coming Soon</p>
-</div>
+<ul>
+<li>
+<p>Input validation is the key component of application security.</p>
+</li>
+<li>
+<p><strong>One of the primary problems in applications is that developers trust that input</strong>.</p>
+</li>
+<li>
+<p>Remember that any piece of data submitted from outside your app can be submitted by, or manipulated by, an attacker.</p>
+</li>
+<li>
+<p>You need to verify that the data received by your application is valid and safe to process.</p>
+</li>
+<li>
+<p>Validating input data is the easiest and yet most effective secure coding method.</p>
+</li>
+<li>
+<p>All data that is inputted into the application either directly or indirectly by an outside source needs to be properly validated.</p>
+</li>
+</ul>
+<p><strong>For Example</strong>:</p>
+<ul>
+<li>
+<p>Following is an example of an Activity as used in a program that receives data from Intent:
+<div class="highlight"><span class="filename">Non-Compliant Code</span><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">TextView</span><span class="w"> </span><span class="n">tv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TextView</span><span class="p">)</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">textview</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="n">InputStreamReader</span><span class="w"> </span><span class="n">isr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="kt">char</span><span class="w"> </span><span class="o">[]</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="o">[</span><span class="mi">1024</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="kt">int</span><span class="w"> </span><span class="n">read</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">urlstr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getIntent</span><span class="p">().</span><span class="na">getStringExtra</span><span class="p">(</span><span class="s">&quot;WEBPAGE_URL&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="n">URL</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="n">urlstr</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="n">isr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">InputStreamReader</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="na">openConnection</span><span class="p">().</span><span class="na">getInputStream</span><span class="p">());</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="k">while</span><span class="p">((</span><span class="n">read</span><span class="o">=</span><span class="n">isr</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">text</span><span class="p">))</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">tv</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">read</span><span class="p">));</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">MalformedURLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{...}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>The example is a simple sample where HTML is acquired from a remote web page in a designated URL and the code is displayed in TextView.</p>
+</li>
+<li>
+<p>However, this is not sufficient.</p>
+</li>
+<li>
+<p>Furthermore, when a <mark><strong>“file://…”</strong></mark> formatted URL is designated by urlstr, the file of the internal file system is opened and is displayed in TextView rather than the remote web page.</p>
+</li>
+<li>
+<p><strong>The below example shows a revision to fix the security bugs:</strong>
+<div class="highlight"><span class="filename">Compliant Code</span><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">TextView</span><span class="w"> </span><span class="n">tv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TextView</span><span class="p">)</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">textview</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="n">InputStreamReader</span><span class="w"> </span><span class="n">isr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="kt">char</span><span class="w"> </span><span class="o">[]</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="o">[</span><span class="mi">1024</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="kt">int</span><span class="w"> </span><span class="n">read</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">urlstr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getIntent</span><span class="p">().</span><span class="na">getStringExtra</span><span class="p">(</span><span class="s">&quot;WEBPAGE_URL&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="n">URL</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">URL</span><span class="p">(</span><span class="n">urlstr</span><span class="p">);</span>
+<span class="hll"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">prot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">url</span><span class="p">.</span><span class="na">getProtocol</span><span class="p">();</span>
+</span><span class="hll"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="s">&quot;http&quot;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">prot</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="s">&quot;https&quot;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">prot</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span class="hll"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MalformedURLException</span><span class="p">(</span><span class="s">&quot;invalid protocol&quot;</span><span class="p">);</span>
+</span><span class="hll"><span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="p">}</span>
+</span><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="n">isr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">InputStreamReader</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="na">openConnection</span><span class="p">().</span><span class="na">getInputStream</span><span class="p">());</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="k">while</span><span class="p">((</span><span class="n">read</span><span class="o">=</span><span class="n">isr</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">text</span><span class="p">))</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="n">tv</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">read</span><span class="p">));</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="16 "></span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">MalformedURLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{...}</span>
+</code></pre></div></p>
+</li>
+</ul>
+<p>Validating the safety of input data is called <strong>“Input Validation”</strong> and it is a fundamental secure coding method.</p>
 <h2 id="5-implement-identity-and-authentication-controls">5. Implement Identity and Authentication Controls<a class="headerlink" href="#5-implement-identity-and-authentication-controls" title="Permanent link">#</a></h2>
 <ul>
 <li>
@@ -1571,30 +2063,774 @@ Since encoded data is smaller in size, you should be able to save space on your 
 </li>
 </ul>
 <h2 id="6-cryptographically-secure-data">6. Cryptographically Secure Data<a class="headerlink" href="#6-cryptographically-secure-data" title="Permanent link">#</a></h2>
-<div class="admonition hint">
-<p class="admonition-title"> </p>
-<p>Coming Soon</p>
-</div>
+<ul>
+<li>
+<p>Encryption techniques are frequently used to ensure confidentiality and integrity, and Android is equipped with a variety of cryptographic features to allow applications to realize confidentiality and integrity.</p>
+</li>
+<li>
+<p>You may use password-based key encryption for the purpose of protecting a user’s confidential data assets.</p>
+</li>
+<li>
+<p><strong>Key Points to consider while Encrypting and Decrypting with Password-based keys</strong>:</p>
+<ul>
+<li>Explicitly specify the encryption mode and the padding.</li>
+<li>Use strong encryption technologies including algorithms, block cipher modes, and padding modes.</li>
+<li>When generating a key from password, use Salt.</li>
+<li>When generating a key from password, specify an appropriate hash iteration count.</li>
+<li>Use a key of length sufficient to guarantee the strength of encryption.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>Here is the complete listing that will allow the encryption or decryption of data based on a password:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="n">String</span><span class="w"> </span><span class="n">PBE_ALGORITHM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;PBEWithSHA256And256BitAES-CBC-BC&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="n">String</span><span class="w"> </span><span class="n">CIPHER_ALGORITHM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;AES/CHC/PKCSSPadding&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="kt">int</span><span class="w"> </span><span class="n">NUM_OF_ITERATIONS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="kt">int</span><span class="w"> </span><span class="n">KEY_SIZE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">256</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">salt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SecureRandom</span><span class="p">.</span><span class="na">nextBytes</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="o">[</span><span class="mi">8</span><span class="o">]</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">iv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SecureRandom</span><span class="p">.</span><span class="na">nextBytes</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="o">[</span><span class="mi">16</span><span class="o">]</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="n">String</span><span class="w"> </span><span class="n">clearText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// The value to be encrypted</span>
+<span class="linenos" data-linenos="11 "></span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">encryptedText</span><span class="p">:</span>
+<span class="linenos" data-linenos="12 "></span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">decryptedtext</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="k">try</span><span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="n">PBEKeySpec</span><span class="w"> </span><span class="n">pbeKeySpec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PBEKeySpec</span><span class="p">(</span><span class="n">password</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">(),</span><span class="w"> </span><span class="n">salt</span><span class="p">,</span><span class="w"> </span><span class="n">NUM_OF_ITERATIONS</span><span class="p">,</span><span class="w"> </span><span class="n">KEY_SIZE</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="n">SecretKeyFactory</span><span class="w"> </span><span class="n">keyFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SecretKeyFactory</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="n">PBE_ALGORITHM</span><span class="p">);</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="n">SecretKey</span><span class="w"> </span><span class="n">secretKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">keyFactory</span><span class="p">.</span><span class="na">generateSecret</span><span class="p">(</span><span class="n">pbeKeySpec</span><span class="p">);</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="n">SecretKeySpec</span><span class="w"> </span><span class="n">secretKeySpec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SecretKeySpec</span><span class="p">(</span><span class="n">secretKey</span><span class="p">.</span><span class="na">getEncoded</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;AES&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="20 "></span>
+<span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="n">IvParameterSpec</span><span class="w"> </span><span class="n">ivSpec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IvParameterSpec</span><span class="p">(</span><span class="n">iv</span><span class="p">):</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span><span class="w">    </span><span class="n">Cipher</span><span class="w"> </span><span class="n">encCipher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cipher</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="n">CIPHER_ALGORITHM</span><span class="p">);</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="n">encCipher</span><span class="p">.</span><span class="na">init</span><span class="p">(</span><span class="n">Cipher</span><span class="p">.</span><span class="na">ENCRYPT_MODE</span><span class="p">,</span><span class="w"> </span><span class="n">secretKeySpec</span><span class="p">,</span><span class="w"> </span><span class="n">ivSpec</span><span class="p">);</span>
+<span class="linenos" data-linenos="25 "></span>
+<span class="linenos" data-linenos="26 "></span><span class="w">    </span><span class="n">Cipher</span><span class="w"> </span><span class="n">decCipher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cipher</span><span class="p">.</span><span class="na">getinstance</span><span class="p">(</span><span class="n">CIPHER_ALGORITHM</span><span class="p">);</span>
+<span class="linenos" data-linenos="27 "></span><span class="w">    </span><span class="n">decCipher</span><span class="p">.</span><span class="na">init</span><span class="p">(</span><span class="n">Cipher</span><span class="p">.</span><span class="na">DECRYPT_MODE</span><span class="p">,</span><span class="w"> </span><span class="n">secretKeySpec</span><span class="p">,</span><span class="w"> </span><span class="n">ivSpec</span><span class="p">);</span>
+<span class="linenos" data-linenos="28 "></span>
+<span class="linenos" data-linenos="29 "></span><span class="w">    </span><span class="n">encryptedText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">encCipher</span><span class="p">.</span><span class="na">doFinal</span><span class="p">(</span><span class="n">clearText</span><span class="p">.</span><span class="na">getBytes</span><span class="p">());</span>
+<span class="linenos" data-linenos="30 "></span><span class="w">    </span><span class="n">decyptedText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">decCipher</span><span class="p">.</span><span class="na">doFinal</span><span class="p">(</span><span class="n">encryptedText</span><span class="p">);</span>
+<span class="linenos" data-linenos="31 "></span>
+<span class="linenos" data-linenos="32 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">sameAsClearText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">decryptedText</span><span class="p">);</span>
+<span class="linenos" data-linenos="33 "></span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="34 "></span><span class="w">    </span><span class="p">...</span>
+<span class="linenos" data-linenos="35 "></span><span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<p>In the above snippet:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">PBE_ALGORITHM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;PBEWithSHA256And256BitAES-CBC-BC&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">String</span><span class="w"> </span><span class="n">CIPHER_ALGORITHM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;AES/CHC/PKCSSPadding&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="kt">int</span><span class="w"> </span><span class="n">NUM_OF_ITERATIONS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span><span class="kt">int</span><span class="w"> </span><span class="n">KEY_SIZE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">256</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li>
+<p>This section of code just sets up the algorithms and parameters we are going to use.</p>
+</li>
+<li>
+<p>Here we are using SHA-256 as the Hashing algorithm and AES in CBC mode as the Encryption Algorithm.</p>
+</li>
+<li>
+<p>We will use 1,000 iterations of the hashing function during the process and will end up with a 256-bit key.</p>
+</li>
+<li>
+<p>We will be using AES, still in Cipher Block Chaining mode, and employ PKCS#5 padding. The padding setting specified how to pad the data being encrypted (or decrypted) if it is not in multiples of 128 bits, as AES operates on blocks of 128 bits at a time. </p>
+</li>
+<li>
+<p>These all are standard algorithms and parameters, representing a strong encryption scheme.</p>
+</li>
+</ul>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">salt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SecureRandom</span><span class="p">.</span><span class="na">nextBytes</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="o">[</span><span class="mi">8</span><span class="o">]</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">iv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SecureRandom</span><span class="p">.</span><span class="na">nextBytes</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="o">[</span><span class="mi">16</span><span class="o">]</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>Here, we set up the <strong>Salt</strong> that will be used in the key derivation computation and the <strong>Initialization Vector</strong> (IV) that will be used in encryption and decryption of data.</li>
+</ul>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">String</span><span class="w"> </span><span class="n">clearText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// The value to be encrypted</span>
+<span class="linenos" data-linenos="2 "></span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">encryptedText</span><span class="p">:</span>
+<span class="linenos" data-linenos="3 "></span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">decryptedtext</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li>
+<p>Here, we just set up the values we will encrypt and decrypt. </p>
+</li>
+<li>
+<p>For the purpose of this example, <strong>clearText</strong> will hold the string we want to encrypt.</p>
+</li>
+<li>
+<p><strong>encryptedText</strong> is a byte array that will hold the encrypted value of the string.</p>
+</li>
+<li>
+<p><strong>decryptedText</strong> will hold the decrypted bytes, once we encrypt the string and then decrypt it.</p>
+</li>
+</ul>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">PBEKeySpec</span><span class="w"> </span><span class="n">pbeKeySpec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PBEKeySpec</span><span class="p">(</span><span class="n">password</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">(),</span><span class="w"> </span><span class="n">salt</span><span class="p">,</span><span class="w"> </span><span class="n">NUM_OF_ITERATIONS</span><span class="p">,</span><span class="w"> </span><span class="n">KEY_SIZE</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">SecretKeyFactory</span><span class="w"> </span><span class="n">keyFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SecretKeyFactory</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="n">PBE_ALGORITHM</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">SecretKey</span><span class="w"> </span><span class="n">secretKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">keyFactory</span><span class="p">.</span><span class="na">generateSecret</span><span class="p">(</span><span class="n">pbeKeySpec</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="n">SecretKeySpec</span><span class="w"> </span><span class="n">secretKeySpec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SecretKeySpec</span><span class="p">(</span><span class="n">secretKey</span><span class="p">.</span><span class="na">getEncoded</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;AES&quot;</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>Here, we perform key derivation, going from the user-supplied password to a 256-bit AES key.</li>
+</ul>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">IvParameterSpec</span><span class="w"> </span><span class="n">ivSpec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IvParameterSpec</span><span class="p">(</span><span class="n">iv</span><span class="p">):</span>
+</code></pre></div>
+<ul>
+<li>We then set up the Initialization Vector (IV) like this.</li>
+</ul>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Cipher</span><span class="w"> </span><span class="n">encCipher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cipher</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="n">CIPHER_ALGORITHM</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">encCipher</span><span class="p">.</span><span class="na">init</span><span class="p">(</span><span class="n">Cipher</span><span class="p">.</span><span class="na">ENCRYPT_MODE</span><span class="p">,</span><span class="w"> </span><span class="n">secretKeySpec</span><span class="p">,</span><span class="w"> </span><span class="n">ivSpec</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="n">Cipher</span><span class="w"> </span><span class="n">decCipher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cipher</span><span class="p">.</span><span class="na">getinstance</span><span class="p">(</span><span class="n">CIPHER_ALGORITHM</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="n">decCipher</span><span class="p">.</span><span class="na">init</span><span class="p">(</span><span class="n">Cipher</span><span class="p">.</span><span class="na">DECRYPT_MODE</span><span class="p">,</span><span class="w"> </span><span class="n">secretKeySpec</span><span class="p">,</span><span class="w"> </span><span class="n">ivSpec</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>
+<p>This is the main section of our example. We use the derived key and IV, along with our specification of what encryption parameters we want to use, to form a Cipher object.</p>
+</li>
+<li>
+<p>We actually create two, one in <strong>ENCRYPT_MODE</strong> and one in <strong>DECRYPT_MODE</strong>.</p>
+</li>
+<li>
+<p>Once we have the cipher objects, we can perform encryption and decryption operations.</p>
+</li>
+<li>
+<p>For encryption, we pass the string we want to encrypt (convert into a byte array) to the <strong>doFinal()</strong> method of the encrypting Cipher object. </p>
+</li>
+<li>
+<p>The encryption operation is performed and the resulting encrypted bytes are returned to us.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">encryptedText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">encCipher</span><span class="p">.</span><span class="na">doFinal</span><span class="p">(</span><span class="n">clearText</span><span class="p">.</span><span class="na">getBytes</span><span class="p">());</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>We can also decrypt data using the same approach. In this case, we use the decrypting Cipher object, passing it the encrypted bytes and getting back to plaintext bytes.</p>
+</li>
+<li>
+<p>As we started a string, we can reconstruct it, and the <strong>sameAsClearText</strong> string will contain exactly the same value as the <strong>clearText</strong> string.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">decyptedText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">decCipher</span><span class="p">.</span><span class="na">doFinal</span><span class="p">(</span><span class="n">encryptedText</span><span class="p">);</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">String</span><span class="w"> </span><span class="n">sameAsClearText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">decryptedText</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+</ul>
+<hr />
+<p>And that’s it. We now have a complete solution for protecting stored data, where we take a user-supplied password, derive a symmetric key from it, and encrypt and decrypt data at will, all in a few short lines of code.</p>
+<p>Once we encrypt the data, we can store it in a file, in a database, or wherever. As long as we keep the symmetric key from compromise, an attacker will not be able to recover the data from its encrypted form.</p>
 <h2 id="7-implement-logging-and-intrusion-detection">7. Implement Logging and Intrusion Detection<a class="headerlink" href="#7-implement-logging-and-intrusion-detection" title="Permanent link">#</a></h2>
-<div class="admonition hint">
+<h3 id="tamper-detection">Tamper Detection<a class="headerlink" href="#tamper-detection" title="Permanent link">#</a></h3>
+<p>Tamper or Intrusion detection is the ability of an application to sense that an active attempt to compromise the application’s integrity or the data associated with the application is in progress; the detection of the threat may enable the application to initiate appropriate defensive actions.</p>
+<h3 id="responding-to-tamper-detection">Responding to Tamper Detection<a class="headerlink" href="#responding-to-tamper-detection" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>The obvious and simple solution would be to check for tampering on startup, and if detected, exit the app optionally with a message to the user explaining why.</p>
+</li>
+<li>
+<p>Here look at different checks that may indicate a tampered, compromised, or hostile environment. </p>
+</li>
+<li>
+<p>These are designed to be activated once you are ready for release.</p>
+</li>
+</ul>
+<h4 id="detect-if-google-play-store-was-the-installer">Detect if Google Play store was the installer<a class="headerlink" href="#detect-if-google-play-store-was-the-installer" title="Permanent link">#</a></h4>
+<ul>
+<li>
+<p>Detecting if the installer was the Google Play store is a simple check that the package name of the installer app matches that of the Google Play store. </p>
+</li>
+<li>
+<p>Specifically, it checks if the installer package starts with <mark><strong>com.google.android</strong></mark>.</p>
+</li>
+<li>
+<p>It is a useful check if you are distributed solely through the Google store.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">checkGooglePlayStore</span><span class="p">(</span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">installerPackageName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">getPackageManager</span><span class="p">().</span><span class="na">getInstallerPackageName</span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="na">getPackageName</span><span class="p">());</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">installerPackageName</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">installerPackageName</span><span class="p">.</span><span class="na">startsWith</span><span class="p">(</span><span class="s">&quot;com.google.android&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span>
+</code></pre></div>
+<h4 id="detect-if-it-runs-on-an-emulator">Detect if it runs on an Emulator<a class="headerlink" href="#detect-if-it-runs-on-an-emulator" title="Permanent link">#</a></h4>
+<ul>
+<li>
+<p>The Java Reflection API makes it possible to inspect classes, methods, and fields at runtime; and in this case, allows us to override the access modifiers that would prevent ordinary code from compiling. </p>
+</li>
+<li>
+<p>The emulator check uses reflection to access a hidden system class, android.os.SystemProperties. </p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isEmulator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">            </span><span class="n">Class</span><span class="w"> </span><span class="n">systemPropertyClazz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Class</span><span class="p">.</span><span class="na">forName</span><span class="p">(</span><span class="s">&quot;android.os.SystemProperties&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">            </span><span class="kt">boolean</span><span class="w"> </span><span class="n">kernelQemu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getProperty</span><span class="p">(</span><span class="n">systemPropertyClazz</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">                    </span><span class="s">&quot;ro.kernel.qemu&quot;</span><span class="p">).</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">            </span><span class="kt">boolean</span><span class="w"> </span><span class="n">hardwareGoldfish</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getProperty</span><span class="p">(</span><span class="n">systemPropertyClazz</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">                    </span><span class="s">&quot;ro.hardware&quot;</span><span class="p">).</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;goldfish&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">            </span><span class="kt">boolean</span><span class="w"> </span><span class="n">modelSdk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getProperty</span><span class="p">(</span><span class="n">systemPropertyClazz</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">                    </span><span class="s">&quot;ro.product.model&quot;</span><span class="p">).</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;sdk&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kernelQemu</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">hardwareGoldfish</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">modelSdk</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">            </span><span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">            </span><span class="c1">// error assumes emulator</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="linenos" data-linenos="17 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="18 "></span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getProperty</span><span class="p">(</span><span class="n">Class</span><span class="w"> </span><span class="n">clazz</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">propertyName</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="p">)</span><span class="w"> </span><span class="n">clazz</span><span class="p">.</span><span class="na">getMethod</span><span class="p">(</span><span class="s">&quot;get&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Class</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">class</span><span class="w"> </span><span class="p">})</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">            </span><span class="p">.</span><span class="na">invoke</span><span class="p">(</span><span class="n">clazz</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">propertyName</span><span class="w"> </span><span class="p">});</span>
+<span class="linenos" data-linenos="21 "></span><span class="p">}</span>
+</code></pre></div>
+<div class="admonition warning">
 <p class="admonition-title"> </p>
-<p>Coming Soon</p>
+<p>Using hidden APIs can be risky as they can change between Android versions.</p>
 </div>
+<h4 id="detect-if-it-runs-on-a-rooted-device">Detect if it runs on a Rooted Device<a class="headerlink" href="#detect-if-it-runs-on-a-rooted-device" title="Permanent link">#</a></h4>
+<ul>
+<li>
+<p>Rooted devices may contain many apps that process sensitive information, such as banking apps, payment apps, social media, and cloud storage. </p>
+</li>
+<li>
+<p>Malicious downloads can expose your device to hackers. </p>
+</li>
+<li>
+<p>For these reasons, the apps installed on a device need to make sure that the device isn&rsquo;t rooted.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">checkRoot</span><span class="p">(){</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">pathDir</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;PATH&quot;</span><span class="p">).</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;:&quot;</span><span class="p">)){</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="n">pathDir</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;su&quot;</span><span class="p">).</span><span class="na">exists</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title"> </p>
+<p>Use <a href="https://github.com/scottyab/rootbeer">Rootbeer</a>. A simple to use root checking Android library.</p>
+</div>
+<h4 id="detect-if-the-app-has-the-debuggable-flag-enabled">Detect if the app has the “debuggable” flag enabled<a class="headerlink" href="#detect-if-the-app-has-the-debuggable-flag-enabled" title="Permanent link">#</a></h4>
+<p>(something that should only be enabled during development)</p>
+<ul>
+<li>
+<p>When debuggable is enabled, it is possible to connect via the Android Debug Bridge and perform detailed dynamic analysis. </p>
+</li>
+<li>
+<p>The debuggable variable is a simple property of the <strong>&lt;application&gt;</strong> element in the <strong>AndroidManifest.xml</strong> file. </p>
+</li>
+<li>
+<p>It is perhaps one of the easiest and most targeted properties to alter in order to perform dynamic analysis.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isDebuggable</span><span class="p">(</span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="na">getApplicationInfo</span><span class="p">().</span><span class="na">flags</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ApplicationInfo</span><span class="p">.</span><span class="na">FLAG_DEBUGGABLE</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">}</span>
+</code></pre></div>
+<h4 id="application-signature-verification">Application Signature Verification<a class="headerlink" href="#application-signature-verification" title="Permanent link">#</a></h4>
+<ul>
+<li>
+<p>Part of the process of an attacker modifying your application&rsquo;s .apk file breaks the digital signature.</p>
+</li>
+<li>
+<p>This means that, if they want to install the .apk file on an Android device, it will need to be resigned using a different signing key.</p>
+</li>
+<li>
+<p>Fortunately, at runtime, Android apps can query PackageManager to find app signatures.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">// CERTIFICATE&#39;S SHA1 Signature</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">CERTIFICATE</span><span class="w"> </span><span class="n">SHA1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;71920AC9486E087DCBCF5C7F6FEC952135858CC5&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">validateAppSignature</span><span class="p">(</span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="c1">// get the signature form the package manager</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">Packageinfo</span><span class="w"> </span><span class="n">packageInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">getPackageManager</span><span class="p">().</span><span class="na">getPackageInfo</span><span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="na">getPackageName</span><span class="p">(),</span><span class="w"> </span><span class="n">PackageManager</span><span class="p">.</span><span class="na">GET_SIGNATURES</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">Signature</span><span class="o">[]</span><span class="w"> </span><span class="n">appSignatures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">packageInfo</span><span class="p">.</span><span class="na">signatures</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="c1">//this sample only checks the first certificate</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Signature</span><span class="w"> </span><span class="n">signature</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">appSignatures</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">            </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">signatureBytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">signature</span><span class="p">.</span><span class="na">toByteArray</span><span class="p">();</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">            </span><span class="c1">//calc shal in hex</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">currentSignature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calcSHA1</span><span class="p">(</span><span class="n">signatureBytes</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">            </span><span class="c1">//compare signatures</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">CERTIFICATE</span><span class="w"> </span><span class="n">SHA1</span><span class="p">.</span><span class="na">equalsIgnoreCase</span><span class="p">{</span><span class="n">currentSignature</span><span class="p">);</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="c1">// if error assume failed to validate</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="linenos" data-linenos="23 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="24 "></span>
+<span class="linenos" data-linenos="25 "></span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">calcSHA1</span><span class="p">(</span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">signature</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">NoSuchAlgorithmException</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="26 "></span><span class="w">    </span><span class="n">MessageDigest</span><span class="w"> </span><span class="n">digest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MessageDigest</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="s">&quot;SHA1&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="27 "></span><span class="w">    </span><span class="n">digest</span><span class="p">.</span><span class="na">update</span><span class="p">(</span><span class="n">signature</span><span class="p">);</span>
+<span class="linenos" data-linenos="28 "></span><span class="w">    </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">signatureHash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digest</span><span class="p">.</span><span class="na">digest</span><span class="p">();</span>
+<span class="linenos" data-linenos="29 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">bytesToHex</span><span class="p">(</span><span class="n">signatureHash</span><span class="p">);</span>
+<span class="linenos" data-linenos="30 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="31 "></span>
+<span class="linenos" data-linenos="32 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">bytesToHex</span><span class="p">(</span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">bytes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="33 "></span><span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kt">char</span><span class="o">[]</span><span class="w"> </span><span class="n">hexArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;2&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;3&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;4&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;5&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;6&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos="34 "></span><span class="w">            </span><span class="sc">&#39;7&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;8&#39;</span><span class="p">,</span><span class="sc">&#39;9&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;B&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;C&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;D&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;E&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;F&#39;</span><span class="w"> </span><span class="p">};</span>
+<span class="linenos" data-linenos="35 "></span><span class="w">    </span><span class="kt">char</span><span class="o">[]</span><span class="w"> </span><span class="n">hexChars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="o">[</span><span class="n">bytes</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos" data-linenos="36 "></span><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+<span class="linenos" data-linenos="37 "></span><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">bytes</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="38 "></span><span class="w">        </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bytes</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">;</span>
+<span class="linenos" data-linenos="39 "></span><span class="w">        </span><span class="n">hexChars</span><span class="o">[</span><span class="n">j</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hexArray</span><span class="o">[</span><span class="n">v</span><span class="w"> </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="mi">4</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos" data-linenos="40 "></span><span class="w">        </span><span class="n">hexChars</span><span class="o">[</span><span class="n">j</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hexArray</span><span class="o">[</span><span class="n">v</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0x0F</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos" data-linenos="41 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="42 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">String</span><span class="p">(</span><span class="n">hexChars</span><span class="p">);</span>
+<span class="linenos" data-linenos="43 "></span><span class="p">}</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title"> </p>
+<p>The hash values should not be hardcoded in real world and instead should be retrieved from a server.</p>
+</div>
+<h4 id="outputting-log-to-logcat">Outputting Log to LogCat<a class="headerlink" href="#outputting-log-to-logcat" title="Permanent link">#</a></h4>
+<ul>
+<li>
+<p>There’s a logging mechanism called <strong>LogCat</strong> in Android, and not only system log information but also application log information outputs to the Logcat.</p>
+</li>
+<li>
+<p>Log information in LogCat can be read out from other application in the same device.</p>
+</li>
+<li>
+<p>So the application which outputs sensitive information to LogCat, is considered that it has the vulnerability of the information leakage.</p>
+</li>
+<li>
+<p>From a security point of view, in release version application, it’s preferable that any log should not be output.</p>
+</li>
+</ul>
+<p>Here we look for some ways to output messages to LogCat in a safe manner even in a release version application.</p>
+<ul>
+<li><strong>ProGuard</strong> - the method to control the Log output in release version application.
+  ProGuard is one of the optimization tools which automatically delete the unnecessary code like unused methods, etc.</li>
+</ul>
+<p>Essentially there are <code>5</code> types of Log output methods:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Log Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Log.e()</td>
+<td align="left">ERROR</td>
+</tr>
+<tr>
+<td align="left">Log.w()</td>
+<td align="left">WARN</td>
+</tr>
+<tr>
+<td align="left">Log.i()</td>
+<td align="left">INFO</td>
+</tr>
+<tr>
+<td align="left">Log.d()</td>
+<td align="left">DEBUG</td>
+</tr>
+<tr>
+<td align="left">Log.v()</td>
+<td align="left">VERBOSE</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>It’s recommended to use the following methods for outputting operation log information:</p>
+<ul>
+<li>Log.e()           //ERROR</li>
+<li>Log.w()           //WARN</li>
+<li>Log.i()           //INFO  </li>
+</ul>
+</li>
+<li>
+<p>And the following for outputting development log information:</p>
+<ul>
+<li>Log.d()           //DEBUG</li>
+<li>Log.v()           //VERBOSE</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">//Sensitive information must not be output by</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="c1">// Log.e(D/w()/i()</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="n">Log</span><span class="p">.</span><span class="na">e</span><span class="p">(</span><span class="n">LOG_TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Not sensitive information (ERROR)&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="n">Log</span><span class="p">.</span><span class="na">w</span><span class="p">(</span><span class="n">LOG_TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Not sensitive information (WARN)&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="n">Log</span><span class="p">.</span><span class="na">i</span><span class="p">(</span><span class="n">LOG_TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Not sensitive information (INFO)&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="c1">//Sensitive information should be output by</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="c1">// Log.d()/v() in case of need.</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="n">Log</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">LOG_TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sensitive information (DEBUG)&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="10 "></span><span class="n">Log</span><span class="p">.</span><span class="na">v</span><span class="p">(</span><span class="n">LOG_TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sensitive information (VERBOSE)&quot;</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>
+<p>If the application is for release, those two methods would be deleted automatically. </p>
+</li>
+<li>
+<p>ProGuard is used to automatically delete code blocks where <strong>Log.d()</strong> and <strong>Log.v()</strong> is called.
+<div class="highlight"><span class="filename">proguard-project.txt</span><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="o">-</span><span class="n">assumenosideeffects</span><span class="w"> </span><span class="kd">class</span> <span class="nc">android</span><span class="p">.</span><span class="na">util</span><span class="p">.</span><span class="na">log</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">sxx</span><span class="w"> </span><span class="nf">d</span><span class="p">(...);</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">sxx</span><span class="w"> </span><span class="nf">v</span><span class="p">(...);</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span>
+</code></pre></div>
+By specifying <strong>Log.d()</strong> and <strong>Log.v()</strong> as parameter of <code>-assumenosideeffects</code> option, call for Log.d() and Log.v() are granted as unnecessary code, and those are to be deleted.</p>
+</li>
+</ul>
+<p>
+<figure><img src="2_logcat_output.png" /><figcaption>Difference of LogCat output between development version application and release version application.</figcaption>
+</figure>
+</p>
 <h2 id="8-leverage-security-frameworks-and-libraries">8. Leverage Security Frameworks and Libraries<a class="headerlink" href="#8-leverage-security-frameworks-and-libraries" title="Permanent link">#</a></h2>
-<div class="admonition hint">
-<p class="admonition-title"> </p>
-<p>Coming Soon</p>
+<h4 id="securing-sharedpreferences-data-with-encrypted-sharedpreferences">Securing SharedPreferences data with Encrypted SharedPreferences<a class="headerlink" href="#securing-sharedpreferences-data-with-encrypted-sharedpreferences" title="Permanent link">#</a></h4>
+<p>Android provides a simple framework for app developers to persistently store key-value pairs of primitive data types.</p>
+<p>Thanks to the <strong>AndroidX Security Library</strong> which was recently added.</p>
+<p>It is a library that wraps the default Android SharedPreferences to encrypt the key-value pairs for protecting them against attackers.</p>
+<ol>
+<li>
+<p>Simply just create or fetch a Master Key from the Android Keystore:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">MasterKey</span><span class="w"> </span><span class="n">masterKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MasterKey</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">MasterKey</span><span class="p">.</span><span class="na">DEFAULT_MASTER_KEY_ALIAS</span><span class="p">)</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">                    </span><span class="p">.</span><span class="na">setKeyScheme</span><span class="p">(</span><span class="n">MasterKey</span><span class="p">.</span><span class="na">KeyScheme</span><span class="p">.</span><span class="na">AES256_GCM</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">                    </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+</code></pre></div>
+We’re given a default key generation specification, AES256_GCM, to use for creating the master key and is recommended to use this specification.</p>
+</li>
+<li>
+<p>Now create an instance of <strong>EncryptedSharedPreferences</strong> which is a wrapper around SharedPreferences and handles all of the encryption.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">SharedPreferences</span><span class="w"> </span><span class="n">sharedPreferences</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EncryptedSharedPreferences</span><span class="p">.</span><span class="na">create</span><span class="p">(</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">                    </span><span class="n">context</span><span class="p">,</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">                    </span><span class="s">&quot;my_secure_preferences&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">                    </span><span class="n">masterKey</span><span class="p">,</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">                    </span><span class="n">EncryptedSharedPreferences</span><span class="p">.</span><span class="na">PrefKeyEncryptionScheme</span><span class="p">.</span><span class="na">AES256_SIV</span><span class="p">,</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">                    </span><span class="n">EncryptedSharedPreferences</span><span class="p">.</span><span class="na">PrefValueEncryptionScheme</span><span class="p">.</span><span class="na">AES256_GCM</span><span class="p">);</span>
+</code></pre></div>
+Here <code>"my_secure_preferences"</code> is the name of the file in which the preferences will be saved.</p>
+</li>
+<li>
+<p>Once we’ve created our <strong>EncryptedSharedPreferences</strong> instance, we can use it just like SharedPreferences to store and read values.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c1">//Storing a value</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">sharedPreferences</span><span class="p">.</span><span class="na">edit</span><span class="p">()</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="p">.</span><span class="na">putString</span><span class="p">(</span><span class="s">&quot;key&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="p">.</span><span class="na">apply</span><span class="p">()</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="c1">//Reading a value</span>
+<span class="linenos" data-linenos="7 "></span><span class="n">sharedPreferences</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&quot;key&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;defaultValue&quot;</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Standard SharedPreferences file</label><label for="__tabbed_1_2">Encrypted SharedPreferences file</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="o">&lt;?</span><span class="n">xml</span><span class="w"> </span><span class="n">version</span><span class="o">=</span><span class="err">&#39;</span><span class="mf">1.0</span><span class="err">&#39;</span><span class="w"> </span><span class="n">encoding</span><span class="o">=</span><span class="err">&#39;</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="err">&#39;</span><span class="w"> </span><span class="n">standalone</span><span class="o">=</span><span class="err">&#39;</span><span class="n">yes</span><span class="err">&#39;</span><span class="w"> </span><span class="o">?&gt;</span>
+<span class="o">&lt;</span><span class="n">map</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;timeout &quot;</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="s">&quot;500&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="kt">boolean</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;is logged in&quot;</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="o">&gt;</span><span class="n">secure</span><span class="w"> </span><span class="n">coding</span><span class="w"> </span><span class="n">practices</span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">map</span><span class="o">&gt;</span>
+</code></pre></div>
 </div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="o">&lt;?</span><span class="n">xml</span><span class="w"> </span><span class="n">version</span><span class="o">=</span><span class="err">&#39;</span><span class="mf">1.0</span><span class="err">&#39;</span><span class="w"> </span><span class="n">encoding</span><span class="o">=</span><span class="err">&#39;</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="err">&#39;</span><span class="w"> </span><span class="n">standalone</span><span class="o">=</span><span class="err">&#39;</span><span class="n">yes</span><span class="err">&#39;</span><span class="w"> </span><span class="o">?&gt;</span>
+<span class="o">&lt;</span><span class="n">map</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;MIIEpQIBAAKCAQEAYyb6BkBms39I7imXMOOUW1EDJIsbGNs&quot;</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="n">HhiXTk3JRgAMuKOwosHLLfaVvRUUT3ICK</span>
+<span class="w">    </span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
+
+<span class="w">    </span><span class="o">&lt;</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;TuwbBUOIrAylL9znGBJI87uEi7pWOFwYwX8SZi11KnD2VZ7&quot;</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="n">va617hf5imdM</span><span class="o">+</span><span class="n">P3KA3Ik50ZwFj1</span><span class="o">/</span><span class="n">Ed2</span>
+<span class="w">    </span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
+
+<span class="w">    </span><span class="o">&lt;</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s">&quot;81qCOgn73Uo84Rjk73t1fVNYsPshl119ztma7U&quot;</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="n">tEcsr41t50rGWT9</span><span class="o">/</span><span class="n">pqlrMC5x503cc</span>
+<span class="w">    </span><span class="o">&lt;/</span><span class="n">string</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">map</span><span class="o">&gt;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="encrypting-a-database-with-sqlcipher">Encrypting a database with SQLCipher<a class="headerlink" href="#encrypting-a-database-with-sqlcipher" title="Permanent link">#</a></h4>
+<p>SQLCipher is one of the simplest ways to enable secure storage in an Android app, and it&rsquo;s compatible for devices running Android 2.1+.</p>
+<p>SQLCipher uses <strong>256-bit AES in CBC mode</strong> to encrypt each database page; in addition, each page has its own random initialization vector to further increase security.</p>
+<p>SQLCipher is a separate implementation of the SQLite database, and rather than implementing its own encryption, it uses the widely used and tested <strong>OpenSSL libcrypto</strong> library.</p>
+<ol>
+<li>
+<p>There are several ways to handle SQLite database, either by working directly with the SQLiteDatabase object or using SQLiteOpenHelper. 
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">android.database.sqlite.*</span><span class="p">;</span><span class="w">   </span><span class="c1">// Don&#39;t use this</span>
+<span class="linenos" data-linenos="2 "></span><span class="kn">import</span><span class="w"> </span><span class="nn">net.sqlcipher.database.*</span><span class="p">;</span><span class="w">    </span><span class="c1">// Use this instead</span>
+</code></pre></div>
+But generally, if you are already using an SQLite database in your app, simply replace the <mark>import android.database.sqlite.*</mark> statement with <strong><mark>import net.sqlcipher.database.*</mark></strong></p>
+</li>
+<li>
+<p>The simplest way to create an encrypted SQLCipher database is to call <strong>openOrCreateDatabase(…)</strong> with a <code>password</code>:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">DB_VERSION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">DB_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;my_encrypted_data.db&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;some-password&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initDB</span><span class="p">(</span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="n">SQLiteDatabase</span><span class="p">.</span><span class="na">loadLibs</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="n">SQLiteDatabase</span><span class="w"> </span><span class="n">database</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SQLiteDatabase</span><span class="p">.</span><span class="na">openOrCreateDatabase</span><span class="p">(</span><span class="n">DB_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="linenos" data-linenos="8 "></span><span class="w">    </span><span class="n">database</span><span class="p">.</span><span class="na">execSQL</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;create table MyTable(a, b)&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p>Rest other operations remain exactly same as that of a normal SQLite database.</p>
+<h4 id="android-keystore-provider">Android KeyStore Provider<a class="headerlink" href="#android-keystore-provider" title="Permanent link">#</a></h4>
+<p>In Android 4.3, a new facility was added to allow apps to save private encryption keys in a system keystore called <strong>Android KeyStore</strong> which restricts access only to the app that created them and it was secured using the device pin code.</p>
+<p>Specifically, the Android KeyStore is a certificate store, and so only public/private keys can be stored.</p>
+<ol>
+<li>
+<p>Create a handle on your app’s KeyStore:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ANDROID_KEYSTORE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;AndroidKeyStore&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">loadKeyStore</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="n">keyStore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KeyStore</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="n">ANDROID_KEYSTORE</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">keyStore</span><span class="p">.</span><span class="na">load</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="c1">// TODO: Handle this appropriately in your app</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Generate and save the app’s key pair:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">generateNewKeyPair</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">alias</span><span class="p">,</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="n">Calendar</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Calendar</span><span class="p">.</span><span class="na">getInstance</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">Calendar</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Calendar</span><span class="p">.</span><span class="na">getInstance</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="n">end</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Calendar</span><span class="p">.</span><span class="na">YEAR</span><span class="p">);</span><span class="w">  </span><span class="c1">// expires 1 year from today</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="n">KeyPairGeneratorSpec</span><span class="w"> </span><span class="n">spec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">KeyPairGeneratorSpec</span><span class="p">.</span><span class="na">Builder</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">                                    </span><span class="p">.</span><span class="na">setAlias</span><span class="p">(</span><span class="n">alias</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">                                    </span><span class="p">.</span><span class="na">setSubject</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">X500Principal</span><span class="p">(</span><span class="s">&quot;CN=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">alias</span><span class="p">))</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">                                    </span><span class="p">.</span><span class="na">setSerialNumber</span><span class="p">(</span><span class="n">BigInteger</span><span class="p">.</span><span class="w"> </span><span class="n">TEN</span><span class="p">)</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">                                    </span><span class="p">.</span><span class="na">setStartDate</span><span class="p">(</span><span class="n">start</span><span class="p">.</span><span class="na">getTime</span><span class="p">())</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">                                    </span><span class="p">.</span><span class="na">setEndDate</span><span class="p">(</span><span class="n">end</span><span class="p">.</span><span class="na">getTime</span><span class="p">())</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">                                    </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="c1">// use the Android keystore</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="n">KeyPairGenerator</span><span class="w"> </span><span class="n">gen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KeyPairGenerator</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;RSA&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ANDROID_KEYSTORE</span><span class="p">);</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="n">gen</span><span class="p">.</span><span class="na">initialize</span><span class="p">(</span><span class="n">spec</span><span class="p">);</span>
+<span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span><span class="w">    </span><span class="c1">// generates the keypair</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="n">gen</span><span class="p">.</span><span class="na">generateKeyPair</span><span class="p">();</span>
+<span class="linenos" data-linenos="21 "></span><span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Retrieve the key with a given alias: 
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="n">PrivateKey</span><span class="w"> </span><span class="nf">loadPrivateKey</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">alias</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">keyStore</span><span class="p">.</span><span class="na">isKeyEntry</span><span class="p">(</span><span class="n">alias</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">e</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Could not find key alias: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">alias</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="n">KeyStore</span><span class="p">.</span><span class="na">Entry</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">keyStore</span><span class="p">.</span><span class="na">getEntry</span><span class="p">(</span><span class="n">KEY_ALIAS</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">entry</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">KeyStore</span><span class="p">.</span><span class="na">PrivateKeyEntry</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">e</span><span class="p">(</span><span class="n">TAG</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;alias: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">alias</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; is not a private key.&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">((</span><span class="n">KeyStore</span><span class="p">.</span><span class="na">PrivateKeyEntry</span><span class="p">)</span><span class="w"> </span><span class="n">entry</span><span class="p">).</span><span class="na">getPrivateKey</span><span class="p">();</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h4 id="generating-a-symmetric-encryption-key">Generating a Symmetric Encryption Key<a class="headerlink" href="#generating-a-symmetric-encryption-key" title="Permanent link">#</a></h4>
+<p>A symmetric key describes a key that is used for both encryption and decryption. To create cryptographically secure encryption keys in general, we use securely generated pseudorandom numbers.</p>
+<p>AES is the preferred encryption standard to DES, and typically used with key sizes 128 bit and 256 bit.</p>
+<ol>
+<li>
+<p>Write the following function to generate a symmetric AES encrpytion key.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">SecretKey</span><span class="w"> </span><span class="nf">generateAESKey</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">keySize</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">NoSuchAlgorithmException</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">SecureRandom</span><span class="w"> </span><span class="n">random</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SecureRandom</span><span class="p">();</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">KeyGenerator</span><span class="w"> </span><span class="n">generator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KeyGenerator</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="s">&quot;AES&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">generator</span><span class="p">.</span><span class="na">init</span><span class="p">(</span><span class="n">keySize</span><span class="p">,</span><span class="w"> </span><span class="n">random</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">generator</span><span class="p">.</span><span class="na">generateKey</span><span class="p">();</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Create a random 32-byte initialization vector (IV) that matches the AES key size of 256 bit.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">IvParameterSpec</span><span class="w"> </span><span class="n">iv</span><span class="p">;</span><span class="w"> </span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">IvParameterSpec</span><span class="w"> </span><span class="nf">getIV</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">iv</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="kt">byte</span><span class="w"> </span><span class="o">[]</span><span class="w"> </span><span class="n">ivByteArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">byte</span><span class="o">[</span><span class="mi">32</span><span class="o">]</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="c1">//populate the array with random bytes</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">ivByteArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SecureRandom</span><span class="p">().</span><span class="na">nextBytes</span><span class="p">(</span><span class="n">ivByteArray</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">iv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IvParameterSpec</span><span class="p">(</span><span class="n">ivByteArray</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">iv</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Write the following function to encrypt an arbitrary string.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="nf">encrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">plainText</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">GeneralSecurityException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">Cipher</span><span class="w"> </span><span class="n">cipher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cipher</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="s">&quot;AES/CBC/PKCS5Padding&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="n">cipher</span><span class="p">.</span><span class="na">init</span><span class="p">(</span><span class="n">Cipher</span><span class="p">.</span><span class="na">ENCRYPT_MODE</span><span class="p">,</span><span class="w"> </span><span class="n">getKey</span><span class="p">(),</span><span class="w"> </span><span class="n">getIV</span><span class="p">());</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">cipher</span><span class="p">.</span><span class="na">doFinal</span><span class="p">(</span><span class="n">plainText</span><span class="p">.</span><span class="na">getBytes</span><span class="p">(</span><span class="s">&quot;UTF-8&quot;</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">SecretKey</span><span class="w"> </span><span class="nf">getKey</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">NoSuchAlgorithmException</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">generateAESKey</span><span class="p">(</span><span class="mi">256</span><span class="p">);</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">key</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>For completeness, the preceding snippet shows how to decrypt.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">decrypt</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">plainText</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">GeneralSecurityException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="n">Cipher</span><span class="w"> </span><span class="n">cipher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cipher</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="s">&quot;AES/CBC/PKCS5Padding&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="n">cipher</span><span class="p">.</span><span class="na">init</span><span class="p">(</span><span class="n">Cipher</span><span class="p">.</span><span class="na">DECRYPT_MODE</span><span class="p">,</span><span class="w"> </span><span class="n">getKey</span><span class="p">(),</span><span class="w"> </span><span class="n">getIV</span><span class="p">());</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">cipher</span><span class="p">.</span><span class="na">doFinal</span><span class="p">(</span><span class="n">cipherText</span><span class="p">).</span><span class="na">toString</span><span class="p">();</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+</code></pre></div>
+The only difference is that here we called the <strong>Cipher.init()</strong> method using the <code>Cipher.DECRYPT_MODE</code> constant.</p>
+</li>
+</ol>
 <h2 id="9-monitor-error-and-exception-handling">9. Monitor Error and Exception Handling<a class="headerlink" href="#9-monitor-error-and-exception-handling" title="Permanent link">#</a></h2>
-<div class="admonition hint">
-<p class="admonition-title"> </p>
-<p>Coming Soon</p>
-</div>
+<p>Exceptions occur when an application gets into an abnormal or error state.</p>
+<p><strong>Monitor Error and Exception Handling is about ensuring that the app will handle an exception and transition to a safe state without exposing sensitive information via the UI or the app&rsquo;s logging mechanisms.</strong></p>
+<ul>
+<li>
+<p>Plan for standard <strong>Runtime Exceptions</strong> (e.g. <em>NullPointerException, IndexOutOfBoundsException, ActivityNotFoundException, CancellationException, SQLException</em>) by creating proper null checks, bound checks, and the like.</p>
+</li>
+<li>
+<p>Make sure that all confidential information handled by high-risk applications is always wiped during execution of the finally blocks.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kt">byte</span><span class="o">[]</span><span class="w"> </span><span class="n">secret</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="c1">//use secret</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SPECIFICEXCEPTIONCLASS</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SPECIFICEXCEPTIONCLASS2</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="c1">// handle any issues</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="c1">//clean the secret.</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Adding a general exception handler for uncaught exceptions is a best practice for resetting the application’s state when a crash is imminent:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MemoryCleanerOnCrash</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Thread</span><span class="p">.</span><span class="na">UncaughtExceptionHandler</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">MemoryCleanerOnCrash</span><span class="w"> </span><span class="n">S_INSTANCE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MemoryCleanerOnCrash</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Thread</span><span class="p">.</span><span class="na">UncaughtExceptionHandler</span><span class="o">&gt;</span><span class="w"> </span><span class="n">mHandlers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="c1">//initialize the handler and set it as the default exception handler</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">S_INSTANCE</span><span class="p">.</span><span class="na">mHandlers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">getDefaultUncaughtExceptionHandler</span><span class="p">());</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="n">Thread</span><span class="p">.</span><span class="na">setDefaultUncaughtExceptionHandler</span><span class="p">(</span><span class="n">S_INSTANCE</span><span class="p">);</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">uncaughtException</span><span class="p">(</span><span class="n">Thread</span><span class="w"> </span><span class="n">thread</span><span class="p">,</span><span class="w"> </span><span class="n">Throwable</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="c1">//handle the cleanup here</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="c1">//....</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="c1">//and then show a message to the user if possible given the context</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">UncaughtExceptionHandler</span><span class="w"> </span><span class="n">handler</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">mHandlers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">            </span><span class="n">handler</span><span class="p">.</span><span class="na">uncaughtException</span><span class="p">(</span><span class="n">thread</span><span class="p">,</span><span class="w"> </span><span class="n">ex</span><span class="p">);</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="22 "></span><span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Now the handler’s initializer must be called in your custom Application class (e.g., the class that extends Application):
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nd">@Override</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">attachBaseContext</span><span class="p">(</span><span class="n">Context</span><span class="w"> </span><span class="n">base</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="kd">super</span><span class="p">.</span><span class="na">attachBaseContext</span><span class="p">(</span><span class="n">base</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="n">MemoryCleanerOnCrash</span><span class="p">.</span><span class="na">init</span><span class="p">();</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ul>
 <h2 id="10-handling-intents">10. Handling Intents<a class="headerlink" href="#10-handling-intents" title="Permanent link">#</a></h2>
-<div class="admonition hint">
-<p class="admonition-title"> </p>
-<p>Coming Soon</p>
-</div>
+<p>Using an untrusted intent to launch a component, for example, by calling <strong>startActivity();</strong> or to return data, for example, by calling <strong>setResult();</strong> is dangerous and can allow malicious  apps to cause the following problems:</p>
+<ul>
+<li>Steal sensitive files or system data (like SMS messages) from your app.</li>
+<li>Launch your app’s private components with poisoned arguments.</li>
+</ul>
+<p>It is important that your app does not call <strong>startActivity</strong>, <strong>startService</strong>, <strong>sendBroadcast</strong>, or <strong>setResult</strong> on untrusted intents without validating or sanitizing these intents.</p>
+<h3 id="intent-redirection">Intent Redirection<a class="headerlink" href="#intent-redirection" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>Some apps contain an Intent Redirection issue which can allow malicious apps to access private app components or files.</p>
+</li>
+<li>
+<p>Intent Redirection occurs when an activity can forward intents to arbitrary components allowing them to reach even unintended private and sensitive ones. </p>
+</li>
+<li>
+<p>Usually, the redirecting activity is intended to launch only a single or a predefined set of activities. </p>
+</li>
+<li>
+<p>Limiting the components that can be reached only to those meant by the developer can eliminate the problem.</p>
+</li>
+<li>
+<p>Generally you can put an Intent to an Intent with:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">();</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">Intent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">EXTRA_INTENT</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Intent</span><span class="p">());</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>To retrieve the Intent (from within an Activity) from the intent you can do the following:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getIntent</span><span class="p">().</span><span class="na">getParcelableExtra</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">EXTRA_INTENT</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+</ul>
+<h4 id="private-vs-public-components-can-make-the-difference">Private vs Public components can make the difference<a class="headerlink" href="#private-vs-public-components-can-make-the-difference" title="Permanent link">#</a></h4>
+<p>If the app component does not need to receive intents from other apps then you can make that app component private by setting the <code>android:exported="false"</code> in your app’s <strong>AndroidManifest.xml</strong> file</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="o">&lt;[</span><span class="n">component</span><span class="o">-</span><span class="n">name</span><span class="o">]</span><span class="w"> </span><span class="n">android</span><span class="p">:</span><span class="n">exported</span><span class="o">=</span><span class="s">&quot;false&quot;</span><span class="o">&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">...</span>
+<span class="linenos" data-linenos="3 "></span><span class="o">&lt;/[</span><span class="n">component</span><span class="o">-</span><span class="n">name</span><span class="o">]&gt;</span>
+</code></pre></div>
+<h4 id="validating-the-source-of-the-intent">Validating the source of the Intent<a class="headerlink" href="#validating-the-source-of-the-intent" title="Permanent link">#</a></h4>
+<p>You can verify that the originating activity can be trusted using methods like <strong>getCallingActivity()</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">//Check if the originating Activity is from trusted package</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">getCallingActivity</span><span class="p">().</span><span class="na">getPackageName</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;desired_package&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getIntent</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="c1">//extract the nested Intent</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="n">Intent</span><span class="w"> </span><span class="n">forward</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Intent</span><span class="p">)</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">getParcelableExtra</span><span class="p">(</span><span class="s">&quot;extra_intent&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="c1">//redirect the nested Intent</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="n">startActivity</span><span class="p">(</span><span class="n">forward</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+</code></pre></div>
+<h4 id="make-sure-that-embedded-intent-is-not-harmful">Make sure that embedded intent is not harmful<a class="headerlink" href="#make-sure-that-embedded-intent-is-not-harmful" title="Permanent link">#</a></h4>
+<p>You should verify that the redirected intent:</p>
+<ul>
+<li>will not be sent to any of your app’s private components, and</li>
+<li>will not be sent to an external app’s components.</li>
+</ul>
+<p>Apps can check which component will be used to handle the intent before redirecting it using methods like <strong>resolveActivity()</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="n">Intent</span><span class="w"> </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getIntent</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="c1">//extract the nested Intent</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="n">Intent</span><span class="w"> </span><span class="n">forward</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Intent</span><span class="p">)</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">getParcelableExtra</span><span class="p">(</span><span class="s">&quot;extra_intent&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="c1">//get component name</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="n">ComponentName</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">forward</span><span class="p">.</span><span class="na">resolveActivity</span><span class="p">(</span><span class="n">getPackageManager</span><span class="p">());</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="c1">//Check that the package name and class name are as intended</span>
+<span class="linenos" data-linenos="10 "></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="na">getPackageName</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;desired_package&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">.</span><span class="na">getClassName</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;desired_class&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="c1">//redirect the nested Intent</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="n">startActivity</span><span class="p">(</span><span class="n">forward</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+</code></pre></div>
 
 
 
