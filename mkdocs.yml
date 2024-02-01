@@ -72,6 +72,7 @@ theme:
 #
 plugins:
   - search # must be included at the first place
+  - timetoread # https://pypi.org/project/mkdocs-timetoread-plugin/0.0.3/#:~:text=Usage,HTML%20output%20generated%20by%20MkDocs.
   # - tags: # we have our own internal tag feature
         # tags_file: tags.md # generated links do not work
   - awesome-pages:
