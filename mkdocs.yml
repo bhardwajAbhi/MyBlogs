@@ -2,7 +2,7 @@
 # Abhishek Bhardwaj
 # github.com/bhardwajAbhi
 #
-site_name: Abhishek Bhardwaj
+site_name: Learn In Bits
 site_url: https://bhardwajabhi.github.io/MyBlogs/ # must have the trailing slash
 site_author: Abhishek Bhardwaj (abhishekbhardwaj090@gmail.com)
 site_description: Tutorials, Blogs, Guides on Android.
@@ -32,7 +32,7 @@ theme:
 
   # https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/
   #icon: 
-  logo: assets/logo.jpg
+  logo: assets/logo.png
   favicon: favicon.png
 
   features:
